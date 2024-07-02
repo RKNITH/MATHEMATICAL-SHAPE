@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parabola Properties and Formulas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        header {
+            background: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 5px 0;
+        }
+
+        .shape {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            position: relative;
+        }
+
+        .square {
+            width: 100px;
+            height: 100px;
+            background-color: #333;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background: #333;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #4CAF50;
+            font-size: 18px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        button {
+            background: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            padding: 5px 8px;
+            border-radius: 4px;
+        }
+
+        button:hover {
+            background: #555;
+        }
+
+        .section {
+            margin-bottom: 20px;
+        }
+
+        input {
+            padding: 5px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        #results {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>Parabola</h1>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="section">
+            <h2>Introduction to Conic Sections</h2>
+            <p>Conic sections are the curves obtained by intersecting a cone with a plane. There are four types of conic
+                sections: parabola, ellipse, hyperbola, and circle.</p>
+        </section>
+
+        <section class="section">
+            <h2>Geometrical Interpretation and Conic Section as a Locus of Point</h2>
+            <p>A conic section can be defined as the locus of a point that moves so that its distance from a fixed point
+                (focus) is in a constant ratio to its distance from a fixed line (directrix).</p>
+        </section>
+
+        <section class="section">
+            <h2>General Equation of Conic Section</h2>
+            <p>The general equation of a conic section is given by: <br> <strong>Ax² + Bxy + Cy² + Dx + Ey + F =
+                    0</strong></p>
+        </section>
+
+        <section class="section">
+            <h2>Conditions for Different Conic Sections</h2>
+            <ul>
+                <li>Parabola: B² - 4AC = 0</li>
+                <li>Ellipse: B² - 4AC < 0</li>
+                <li>Hyperbola: B² - 4AC > 0</li>
+                <li>Circle: A = C and B = 0</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>General Equation of Parabola</h2>
+            <p>The general equation of a parabola is: <br> <strong>y² = 4ax</strong> (for a horizontal parabola) <br>
+                <strong>x² = 4ay</strong> (for a vertical parabola)
+            </p>
+        </section>
+
+        <section class="section">
+            <h2>Details about Parabola</h2>
+            <ul>
+                <li><strong>Focus:</strong> The fixed point.</li>
+                <li><strong>Directrix:</strong> The fixed line.</li>
+                <li><strong>Vertex:</strong> The midpoint of the focus and the directrix.</li>
+                <li><strong>Latus Rectum:</strong> The line segment perpendicular to the axis of symmetry through the
+                    focus, with endpoints on the parabola.</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>Point and a Parabola</h2>
+            <p>For a point (x, y) on a parabola, the relationship to its focus and directrix is maintained by the
+                definition of the parabola.</p>
+        </section>
+
+        <section class="section">
+            <h2>Equation of Chord</h2>
+            <p>The equation of a chord with endpoints (x1, y1) and (x2, y2) on the parabola y² = 4ax is given by: <br>
+                <strong>t = y - mx + c</strong> where m is the slope of the chord and c is the y-intercept.
+            </p>
+        </section>
+
+        <section class="section">
+            <h2>Condition for Focal Chord</h2>
+            <p>A chord passing through the focus of a parabola is called a focal chord. For a parabola y² = 4ax, the
+                condition for a focal chord is that its midpoint lies on the directrix.</p>
+        </section>
+
+        <section class="section">
+            <h2>Calculate Length of Focal Chord</h2>
+            <p>The length of the focal chord of the parabola y² = 4ax is given by: <br> <strong>Length = 4a</strong></p>
+        </section>
+
+        <section class="section">
+            <h2>Diameter of Parabola</h2>
+            <p>For a parabola, the diameter is the line parallel to the axis of the parabola passing through the
+                midpoint of a chord.</p>
+        </section>
+
+        <section class="section">
+            <h2>Tangent of Parabola</h2>
+            <p>The equation of the tangent to the parabola y² = 4ax at point (x1, y1) is: <br> <strong>yy1 = 2a(x +
+                    x1)</strong></p>
+        </section>
+
+        <section class="section">
+            <h2>Calculate Length of Tangent</h2>
+            <p>The length of the tangent from a point (x1, y1) to the parabola y² = 4ax is: <br> <strong>Length = √(y1²
+                    - 4ax1)</strong></p>
+        </section>
+
+        <section class="section">
+            <h2>Calculate Point of Intersection of Tangents</h2>
+            <p>The point of intersection of tangents drawn from points (x1, y1) and (x2, y2) on the parabola y² = 4ax
+                can be found by solving the system of their tangent equations.</p>
+        </section>
+
+        <section class="section">
+            <h2>Director of Circle and Calculate It</h2>
+            <p>The director circle of a parabola is the locus of the point of intersection of two perpendicular tangents
+                to the parabola.</p>
+        </section>
+
+        <section class="section">
+            <h2>Pair of Tangents</h2>
+            <p>The pair of tangents from an external point to the parabola can be found by solving the quadratic formed
+                by substituting the point into the general equation of the parabola.</p>
+        </section>
+
+        <section class="section">
+            <h2>Chord of Contact</h2>
+            <p>The chord of contact of tangents drawn from a point (x1, y1) to the parabola y² = 4ax is: <br>
+                <strong>yy1 = 2a(x + x1)</strong>
+            </p>
+        </section>
+
+        <section class="section">
+            <h2>Calculate Equation of Common Tangents of Two Parabolas</h2>
+            <p>The equation of common tangents to two parabolas can be found by equating their tangent equations and
+                solving for the common points.</p>
+        </section>
+
+        <section class="section">
+            <h2>Equation of Normal to Parabola</h2>
+            <p>The equation of the normal to the parabola y² = 4ax at point (x1, y1) is: <br> <strong>y = -1/m (x - x1)
+                    + y1</strong> where m is the slope of the tangent at (x1, y1).</p>
+        </section>
+
+        <section class="section">
+            <h2>Conormal Point and Calculate It</h2>
+            <p>A conormal point is the point through which more than one normal passes. It can be calculated by finding
+                the points of intersection of the normals.</p>
+        </section>
+
+        <section class="section">
+            <h2>Subtangent and Subnormal</h2>
+            <p>For a point on a parabola y² = 4ax, the subtangent and subnormal are the projections of the tangent and
+                normal segments on the x-axis, respectively.</p>
+            <ul>
+                <li><strong>Subtangent:</strong> The length of the projection of the tangent on the x-axis, given by 2x.
+                </li>
+                <li><strong>Subnormal:</strong> The length of the projection of the normal on the x-axis, given by 2a.
+                </li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>Calculate Subtangent and Subnormal</h2>
+            <p>To calculate the subtangent and subnormal at a point (x1, y1) on the parabola y² = 4ax:</p>
+            <ul>
+                <li><strong>Subtangent:</strong> 2x1</li>
+                <li><strong>Subnormal:</strong> 2a</li>
+            </ul>
+        </section>
+        <section class="section">
+            <h2>Calculate Length of Focal Chord</h2>
+            <label for="a-focal">Value of a:</label>
+            <input type="text" id="a-focal" name="a-focal"><br><br>
+            <button onclick="displayFocalChordLength()">Calculate</button>
+            <div id="focal-chord-result"></div>
+        </section>
+
+        <!-- Section: Calculate Diameter of Parabola -->
+        <section class="section">
+            <h2>Calculate Diameter of Parabola</h2>
+            <label for="a-diameter">Value of a:</label>
+            <input type="text" id="a-diameter" name="a-diameter"><br><br>
+            <button onclick="displayDiameter()">Calculate</button>
+            <div id="diameter-result"></div>
+        </section>
+
+        <!-- Section: Calculate Length of Tangent -->
+        <section class="section">
+            <h2>Calculate Length of Tangent</h2>
+            <label for="a-tangent">Value of a:</label>
+            <input type="text" id="a-tangent" name="a-tangent"><br><br>
+            <label for="x1-tangent">x-coordinate (x1):</label>
+            <input type="text" id="x1-tangent" name="x1-tangent"><br><br>
+            <label for="y1-tangent">y-coordinate (y1):</label>
+            <input type="text" id="y1-tangent" name="y1-tangent"><br><br>
+            <button onclick="displayTangentLength()">Calculate</button>
+            <div id="tangent-result"></div>
+        </section>
+
+        <!-- Section: Calculate Subtangent and Subnormal -->
+        <section class="section">
+            <h2>Calculate Subtangent and Subnormal</h2>
+            <label for="x1-sub">x-coordinate (x1):</label>
+            <input type="text" id="x1-sub" name="x1-sub"><br><br>
+            <label for="a-sub">Value of a:</label>
+            <input type="text" id="a-sub" name="a-sub"><br><br>
+            <button onclick="displaySubtangentSubnormal()">Calculate</button>
+            <div id="subtangent-subnormal-result"></div>
+        </section>
+        <!-- Section: Calculate Point of Intersection of Tangents -->
+        <section class="section">
+            <h2>Calculate Point of Intersection of Tangents</h2>
+            <label for="m1-tangent">Slope of tangent 1 (m1):</label>
+            <input type="text" id="m1-tangent" name="m1-tangent"><br><br>
+            <label for="m2-tangent">Slope of tangent 2 (m2):</label>
+            <input type="text" id="m2-tangent" name="m2-tangent"><br><br>
+            <button onclick="displayIntersectionOfTangents()">Calculate</button>
+            <div id="tangents-intersection-result"></div>
+        </section>
+
+        <!-- Section: Calculate Director Circle -->
+        <section class="section">
+            <h2>Calculate Director Circle</h2>
+            <label for="a-director">Value of a:</label>
+            <input type="text" id="a-director" name="a-director"><br><br>
+            <button onclick="displayDirectorCircle()">Calculate</button>
+            <div id="director-circle-result"></div>
+        </section>
+
+        <!-- Section: Calculate Pair of Tangents -->
+        <section class="section">
+            <h2>Calculate Pair of Tangents</h2>
+            <label for="a-pair">Value of a:</label>
+            <input type="text" id="a-pair" name="a-pair"><br><br>
+            <button onclick="displayPairOfTangents()">Calculate</button>
+            <div id="pair-tangents-result"></div>
+        </section>
+
+        <!-- Section: Calculate Chord of Contact -->
+        <section class="section">
+            <h2>Calculate Chord of Contact</h2>
+            <label for="x1-chord">x-coordinate (x1):</label>
+            <input type="text" id="x1-chord" name="x1-chord"><br><br>
+            <label for="y1-chord">y-coordinate (y1):</label>
+            <input type="text" id="y1-chord" name="y1-chord"><br><br>
+            <label for="a-chord">Value of a:</label>
+            <input type="text" id="a-chord" name="a-chord"><br><br>
+            <button onclick="displayChordOfContact()">Calculate</button>
+            <div id="chord-contact-result"></div>
+        </section>
+
+        <!-- Section: Calculate Common Tangents of Two Parabolas -->
+        <section class="section">
+            <h2>Calculate Common Tangents of Two Parabolas</h2>
+            <label for="a1-common">Value of a1:</label>
+            <input type="text" id="a1-common" name="a1-common"><br><br>
+            <label for="a2-common">Value of a2:</label>
+            <input type="text" id="a2-common" name="a2-common"><br><br>
+            <button onclick="displayCommonTangents()">Calculate</button>
+            <div id="common-tangents-result"></div>
+        </section>
+
+        <!-- Section: Calculate Equation of Normal -->
+        <section class="section">
+            <h2>Calculate Equation of Normal</h2>
+            <label for="x1-normal">x-coordinate (x1):</label>
+            <input type="text" id="x1-normal" name="x1-normal"><br><br>
+            <label for="a-normal">Value of a:</label>
+            <input type="text" id="a-normal" name="a-normal"><br><br>
+            <button onclick="displayEquationOfNormal()">Calculate</button>
+            <div id="equation-normal-result"></div>
+        </section>
+
+        <!-- Section: Calculate Conormal Point -->
+        <section class="section">
+            <h2>Calculate Conormal Point</h2>
+            <label for="m1-conormal">Slope of normal 1 (m1):</label>
+            <input type="text" id="m1-conormal" name="m1-conormal"><br><br>
+            <label for="m2-conormal">Slope of normal 2 (m2):</label>
+            <input type="text" id="m2-conormal" name="m2-conormal"><br><br>
+            <label for="a-conormal">Coefficient (a):</label>
+            <input type="text" id="a-conormal" name="a-conormal"><br><br>
+            <button onclick="displayConormalPoint()">Calculate</button>
+            <div id="conormal-point-result"></div>
+        </section>
+
+
+
+
+
+
+
+
+        <a href="../index.html">Back to Topics</a>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Parabola Properties. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Function to calculate the length of the focal chord
+        function calculateLengthOfFocalChord(a) {
+            return 4 * a;
+        }
+
+        // Function to calculate the diameter of the parabola
+        function calculateDiameter(a) {
+            return 2 * a;
+        }
+
+        // Function to calculate the length of the tangent
+        function calculateLengthOfTangent(y1, a, x1) {
+            return Math.sqrt(y1 ** 2 - 4 * a * x1);
+        }
+
+        // Function to calculate the subtangent
+        function calculateSubtangent(x1) {
+            return 2 * x1;
+        }
+
+        // Function to calculate the subnormal
+        function calculateSubnormal(a) {
+            return 2 * a;
+        }
+
+        // Display functions
+        function displayFocalChordLength() {
+            const a = parseFloat(document.getElementById('a-focal').value);
+            if (isNaN(a)) {
+                document.getElementById('focal-chord-result').innerText = 'Please enter a valid number for a.';
+                return;
+            }
+            const focalChordLength = calculateLengthOfFocalChord(a);
+            document.getElementById('focal-chord-result').innerText = `Length of Focal Chord: ${focalChordLength} units`;
+        }
+
+        function displayDiameter() {
+            const a = parseFloat(document.getElementById('a-diameter').value);
+            if (isNaN(a)) {
+                document.getElementById('diameter-result').innerText = 'Please enter a valid number for a.';
+                return;
+            }
+            const diameter = calculateDiameter(a);
+            document.getElementById('diameter-result').innerText = `Diameter of Parabola: ${diameter} units`;
+        }
+
+        function displayTangentLength() {
+            const a = parseFloat(document.getElementById('a-tangent').value);
+            const x1 = parseFloat(document.getElementById('x1-tangent').value);
+            const y1 = parseFloat(document.getElementById('y1-tangent').value);
+            if (isNaN(a) || isNaN(x1) || isNaN(y1)) {
+                document.getElementById('tangent-result').innerText = 'Please enter valid numbers for a, x1, and y1.';
+                return;
+            }
+            const tangentLength = calculateLengthOfTangent(y1, a, x1);
+            document.getElementById('tangent-result').innerText = `Length of Tangent: ${tangentLength} units`;
+        }
+
+        function displaySubtangentSubnormal() {
+            const x1 = parseFloat(document.getElementById('x1-sub').value);
+            const a = parseFloat(document.getElementById('a-sub').value);
+            if (isNaN(x1) || isNaN(a)) {
+                document.getElementById('subtangent-subnormal-result').innerText = 'Please enter valid numbers for x1 and a.';
+                return;
+            }
+            const subtangent = calculateSubtangent(x1);
+            const subnormal = calculateSubnormal(a);
+            document.getElementById('subtangent-subnormal-result').innerHTML = `
+                <p><strong>Subtangent:</strong> ${subtangent} units</p>
+                <p><strong>Subnormal:</strong> ${subnormal} units</p>
+            `;
+        }
+
+        // Function to calculate point of intersection of tangents
+        function calculateIntersectionOfTangents(m1, m2, a) {
+            const x = a * (m1 + m2);
+            const y = a * m1 * m2;
+            return { x, y };
+        }
+
+        // Function to calculate radius of director circle
+        function calculateDirectorCircle(a) {
+            return Math.sqrt(2 * a * a);
+        }
+
+        // Function to calculate pair of tangents (using symmetrical property)
+        function calculatePairOfTangents(a) {
+            return 2 * a;
+        }
+
+        // Function to calculate chord of contact
+        function calculateChordOfContact(x1, y1, a) {
+            return { chord: `yy1 = 2a(x + x1)` };
+        }
+
+        // Function to calculate equation of common tangents of two parabolas
+        function calculateCommonTangents(a1, a2) {
+            const commonSlope = Math.sqrt(a1 * a2);
+            return { tangent: `y = ${commonSlope}x` };
+        }
+
+        // Function to calculate equation of normal
+        function calculateEquationOfNormal(x1, a) {
+            const y1 = x1 * x1 / (4 * a);
+            const slope = -2 * a / x1;
+            const c = y1 - slope * x1;
+            return { normal: `y = ${slope}x + ${c}` };
+        }
+
+        // Function to calculate conormal point
+        function calculateConormalPoint(m1, m2, a) {
+            const x = a * (m1 + m2);
+            const y = a * m1 * m2;
+            return { x, y };
+        }
+
+        // Display functions
+        function displayIntersectionOfTangents() {
+            const m1 = parseFloat(document.getElementById('m1-tangent').value);
+            const m2 = parseFloat(document.getElementById('m2-tangent').value);
+            const a = parseFloat(document.getElementById('a-tangent').value);
+            if (isNaN(m1) || isNaN(m2) || isNaN(a)) {
+                document.getElementById('tangents-intersection-result').innerText = 'Please enter valid numbers for m1, m2, and a.';
+                return;
+            }
+            const intersection = calculateIntersectionOfTangents(m1, m2, a);
+            document.getElementById('tangents-intersection-result').innerText = `Point of Intersection: (${intersection.x}, ${intersection.y})`;
+        }
+        function displayIntersectionOfTangents() {
+            const m1 = parseFloat(document.getElementById('m1-tangent').value);
+            const m2 = parseFloat(document.getElementById('m2-tangent').value);
+            const a = parseFloat(document.getElementById('a-tangent').value);
+            if (isNaN(m1) || isNaN(m2) || isNaN(a)) {
+                document.getElementById('tangents-intersection-result').innerText = 'Please enter valid numbers for m1, m2, and a.';
+                return;
+            }
+            const intersection = calculateIntersectionOfTangents(m1, m2, a);
+            document.getElementById('tangents-intersection-result').innerText = `Point of Intersection: (${intersection.x}, ${intersection.y})`;
+        }
+
+        function displayDirectorCircle() {
+            const a = parseFloat(document.getElementById('a-director').value);
+            if (isNaN(a)) {
+                document.getElementById('director-circle-result').innerText = 'Please enter a valid number for a.';
+                return;
+            }
+            const directorCircle = calculateDirectorCircle(a);
+            document.getElementById('director-circle-result').innerText = `Radius of Director Circle: ${directorCircle}`;
+        }
+
+        function displayPairOfTangents() {
+            const a = parseFloat(document.getElementById('a-pair').value);
+            if (isNaN(a)) {
+                document.getElementById('pair-tangents-result').innerText = 'Please enter a valid number for a.';
+                return;
+            }
+            const pairOfTangents = calculatePairOfTangents(a);
+            document.getElementById('pair-tangents-result').innerText = `Pair of Tangents Length: ${pairOfTangents}`;
+        }
+
+        function displayChordOfContact() {
+            const x1 = parseFloat(document.getElementById('x1-chord').value);
+            const y1 = parseFloat(document.getElementById('y1-chord').value);
+            const a = parseFloat(document.getElementById('a-chord').value);
+            if (isNaN(x1) || isNaN(y1) || isNaN(a)) {
+                document.getElementById('chord-contact-result').innerText = 'Please enter valid numbers for x1, y1, and a.';
+                return;
+            }
+            const chordOfContact = calculateChordOfContact(x1, y1, a);
+            document.getElementById('chord-contact-result').innerText = `Chord of Contact Equation: ${chordOfContact.chord}`;
+        }
+
+        function displayCommonTangents() {
+            const a1 = parseFloat(document.getElementById('a1-common').value);
+            const a2 = parseFloat(document.getElementById('a2-common').value);
+            if (isNaN(a1) || isNaN(a2)) {
+                document.getElementById('common-tangents-result').innerText = 'Please enter valid numbers for a1 and a2.';
+                return;
+            }
+            const commonTangents = calculateCommonTangents(a1, a2);
+            document.getElementById('common-tangents-result').innerText = `Common Tangents Equation: ${commonTangents.tangent}`;
+        }
+
+        function displayEquationOfNormal() {
+            const x1 = parseFloat(document.getElementById('x1-normal').value);
+            const a = parseFloat(document.getElementById('a-normal').value);
+            if (isNaN(x1) || isNaN(a)) {
+                document.getElementById('equation-normal-result').innerText = 'Please enter valid numbers for x1 and a.';
+                return;
+            }
+            const equationOfNormal = calculateEquationOfNormal(x1, a);
+            document.getElementById('equation-normal-result').innerText = `Equation of Normal: ${equationOfNormal.normal}`;
+        }
+
+        function displayConormalPoint() {
+            const m1 = parseFloat(document.getElementById('m1-conormal').value);
+            const m2 = parseFloat(document.getElementById('m2-conormal').value);
+            const a = parseFloat(document.getElementById('a-conormal').value);
+            if (isNaN(m1) || isNaN(m2) || isNaN(a)) {
+                document.getElementById('conormal-point-result').innerText = 'Please enter valid numbers for m1, m2, and a.';
+                return;
+            }
+            const conormalPoint = calculateConormalPoint(m1, m2, a);
+            document.getElementById('conormal-point-result').innerText = `Conormal Point: (${conormalPoint.x}, ${conormalPoint.y})`;
+        }
+    </script>
+
+</body>
+
+</html>

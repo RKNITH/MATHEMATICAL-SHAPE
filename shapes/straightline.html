@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Straight Line Properties and Calculations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        header {
+            background: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 5px 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background: #333;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #4CAF50;
+            font-size: 18px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        button {
+            background: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            padding: 5px 8px;
+            border-radius: 4px;
+        }
+
+        button:hover {
+            background: #555;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>STRAIGHT LINE PROPERTIES AND CALCULATIONS</h1>
+        </div>
+    </header>
+
+    <main class="container">
+        <section>
+            <h2>Definition</h2>
+            <p>A straight line is the shortest distance between two points in a plane and extends infinitely in both
+                directions.</p>
+        </section>
+
+        <section>
+            <h2>Equation of a Line</h2>
+            <ul>
+                <li><strong>Point-Slope Form:</strong> y - y<sub>1</sub> = m(x - x<sub>1</sub>)</li>
+                <li><strong>Two-Point Form:</strong> (y - y<sub>1</sub>) / (y<sub>2</sub> - y<sub>1</sub>) = (x -
+                    x<sub>1</sub>) / (x<sub>2</sub> - x<sub>1</sub>)</li>
+                <li><strong>Slope-Intercept Form:</strong> y = mx + c</li>
+                <li><strong>Intercept Form:</strong> x / a + y / b = 1</li>
+                <li><strong>Normal Form:</strong> x cos θ + y sin θ = p</li>
+                <li><strong>Parametric Form:</strong> x = x<sub>1</sub> + r cos θ, y = y<sub>1</sub> + r sin θ</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Check Line Relationships</h2>
+            <h3>Check if Two Lines Coincide, are Parallel, or Perpendicular</h3>
+            <label for="a1">Line 1 (A1x + B1y + C1 = 0):</label><br>
+            <input type="text" id="a1" name="a1">x + <input type="text" id="b1" name="b1">y + <input type="text" id="c1"
+                name="c1"> = 0<br><br>
+
+            <label for="a2">Line 2 (A2x + B2y + C2 = 0):</label><br>
+            <input type="text" id="a2" name="a2">x + <input type="text" id="b2" name="b2">y + <input type="text" id="c2"
+                name="c2"> = 0<br><br>
+
+            <button onclick="checkLineRelationship()">Check Relationship</button>
+            <p id="lineRelationshipResult"></p>
+
+            <h3>Calculate Distance between a Line and a Point</h3>
+            <label for="a3">Line (Ax + By + C = 0):</label><br>
+            <input type="text" id="a3" name="a3">x + <input type="text" id="b3" name="b3">y + <input type="text" id="c3"
+                name="c3"> = 0<br><br>
+
+            <label for="x1">Point (x1, y1):</label><br>
+            <input type="text" id="x1" name="x1"> , <input type="text" id="y1" name="y1"><br><br>
+
+            <button onclick="calculateDistancePointToLine()">Calculate Distance</button>
+            <p id="pointToLineDistanceResult"></p>
+
+            <h3>Calculate Distance between Two Parallel Lines</h3>
+            <label for="a4">Line 1 (A1x + B1y + C1 = 0):</label><br>
+            <input type="text" id="a4" name="a4">x + <input type="text" id="b4" name="b4">y + <input type="text" id="c4"
+                name="c4"> = 0<br><br>
+
+            <label for="a5">Line 2 (A2x + B2y + C2 = 0):</label><br>
+            <input type="text" id="a5" name="a5">x + <input type="text" id="b5" name="b5">y + <input type="text" id="c5"
+                name="c5"> = 0<br><br>
+
+            <button onclick="calculateDistanceBetweenLines()">Calculate Distance</button>
+            <p id="lineToLineDistanceResult"></p>
+
+
+
+
+            <h3>Calculate Angle between Two Lines</h3>
+            <label for="m1">Slope of Line 1 (m1):</label>
+            <input type="text" id="m1" name="m1"><br><br>
+
+            <label for="m2">Slope of Line 2 (m2):</label>
+            <input type="text" id="m2" name="m2"><br><br>
+
+            <button onclick="calculateAngleBetweenLines()">Calculate Angle</button>
+            <p id="angleBetweenLinesResult"></p>
+
+            <h3>Check Concurrency of Three Lines</h3>
+            <label for="a6">Line 1 (A1x + B1y + C1 = 0):</label><br>
+            <input type="text" id="a6" name="a6">x + <input type="text" id="b6" name="b6">y + <input type="text" id="c6"
+                name="c6"> = 0<br><br>
+
+            <label for="a7">Line 2 (A2x + B2y + C2 = 0):</label><br>
+            <input type="text" id="a7" name="a7">x + <input type="text" id="b7" name="b7">y + <input type="text" id="c7"
+                name="c7"> = 0<br><br>
+
+            <label for="a8">Line 3 (A3x + B3y + C3 = 0):</label><br>
+            <input type="text" id="a8" name="a8">x + <input type="text" id="b8" name="b8">y + <input type="text" id="c8"
+                name="c8"> = 0<br><br>
+
+            <button onclick="checkConcurrency()">Check Concurrency</button>
+            <p id="concurrencyResult"></p>
+
+            <h3>Calculate Area of Triangle</h3>
+            <label for="a6">Line 1 (A1x + B1y + C1 = 0):</label><br>
+            <input type="text" id="a6" name="a6">x + <input type="text" id="b6" name="b6">y + <input type="text" id="c6"
+                name="c6"> = 0<br><br>
+
+            <label for="a7">Line 2 (A2x + B2y + C2 = 0):</label><br>
+            <input type="text" id="a7" name="a7">x + <input type="text" id="b7" name="b7">y + <input type="text" id="c7"
+                name="c7"> = 0<br><br>
+
+            <label for="a8">Line 3 (A3x + B3y + C3 = 0):</label><br>
+            <input type="text" id="a8" name="a8">x + <input type="text" id="b8" name="b8">y + <input type="text" id="c8"
+                name="c8"> = 0<br><br>
+
+            <button onclick="calculateTriangleArea()">Calculate Triangle Area</button>
+            <p id="triangleAreaResult"></p>
+
+            <h3>Calculate Area of Quadrilateral</h3>
+            <label for="a1">Line 1 (A1x + B1y + C1 = 0):</label><br>
+            <input type="text" id="a1" name="a1">x + <input type="text" id="b1" name="b1">y + <input type="text" id="c1"
+                name="c1"> = 0<br><br>
+
+            <label for="a2">Line 2 (A2x + B2y + C2 = 0):</label><br>
+            <input type="text" id="a2" name="a2">x + <input type="text" id="b2" name="b2">y + <input type="text" id="c2"
+                name="c2"> = 0<br><br>
+
+            <label for="a3">Line 3 (A3x + B3y + C3 = 0):</label><br>
+            <input type="text" id="a3" name="a3">x + <input type="text" id="b3" name="b3">y + <input type="text" id="c3"
+                name="c3"> = 0<br><br>
+
+            <label for="a4">Line 4 (A4x + B4y + C4 = 0):</label><br>
+            <input type="text" id="a4" name="a4">x + <input type="text" id="b4" name="b4">y + <input type="text" id="c4"
+                name="c4"> = 0<br><br>
+
+            <button onclick="calculateQuadrilateralArea()">Calculate Quadrilateral Area</button>
+            <p id="quadrilateralAreaResult"></p>
+        </section>
+
+        <a href="../index.html">Back to Topics</a>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Straight Line Properties. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function checkLineRelationship() {
+            const a1 = parseFloat(document.getElementById('a1').value);
+            const b1 = parseFloat(document.getElementById('b1').value);
+            const c1 = parseFloat(document.getElementById('c1').value);
+            const a2 = parseFloat(document.getElementById('a2').value);
+            const b2 = parseFloat(document.getElementById('b2').value);
+            const c2 = parseFloat(document.getElementById('c2').value);
+
+            if (isNaN(a1) || isNaN(b1) || isNaN(c1) || isNaN(a2) || isNaN(b2) || isNaN(c2)) {
+                document.getElementById('lineRelationshipResult').innerText = 'Please enter valid coefficients (numbers).';
+                return;
+            }
+
+            const determinant = a1 * b2 - a2 * b1;
+            if (determinant === 0) {
+                if ((a1 / a2 === b1 / b2) && (a1 / a2 === c1 / c2)) {
+                    document.getElementById('lineRelationshipResult').innerText = 'The lines coincide.';
+                } else {
+                    document.getElementById('lineRelationshipResult').innerText = 'The lines are parallel.';
+                }
+            } else if ((a1 * a2 + b1 * b2) === 0) {
+                document.getElementById('lineRelationshipResult').innerText = 'The lines are perpendicular.';
+            } else {
+                document.getElementById('lineRelationshipResult').innerText = 'The lines are neither parallel nor perpendicular.';
+            }
+        }
+
+        function calculateDistancePointToLine() {
+            const a3 = parseFloat(document.getElementById('a3').value);
+            const b3 = parseFloat(document.getElementById('b3').value);
+            const c3 = parseFloat(document.getElementById('c3').value);
+            const x1 = parseFloat(document.getElementById('x1').value);
+            const y1 = parseFloat(document.getElementById('y1').value);
+
+            if (isNaN(a3) || isNaN(b3) || isNaN(c3) || isNaN(x1) || isNaN(y1)) {
+                document.getElementById('pointToLineDistanceResult').innerText = 'Please enter valid coordinates and coefficients (numbers).';
+                return;
+            }
+
+            const distance = Math.abs(a3 * x1 + b3 * y1 + c3) / Math.sqrt(a3 * a3 + b3 * b3);
+            document.getElementById('pointToLineDistanceResult').innerText = `Distance between point and line: ${distance.toFixed(2)}`;
+        }
+        function calculateDistanceBetweenLines() {
+            const a4 = parseFloat(document.getElementById('a4').value);
+            const b4 = parseFloat(document.getElementById('b4').value);
+            const c4 = parseFloat(document.getElementById('c4').value);
+            const a5 = parseFloat(document.getElementById('a5').value);
+            const b5 = parseFloat(document.getElementById('b5').value);
+            const c5 = parseFloat(document.getElementById('c5').value);
+
+            if (isNaN(a4) || isNaN(b4) || isNaN(c4) || isNaN(a5) || isNaN(b5) || isNaN(c5)) {
+                document.getElementById('lineToLineDistanceResult').innerText = 'Please enter valid coefficients (numbers).';
+                return;
+            }
+
+            // Check if lines are parallel
+            if (a4 * b5 === a5 * b4) {
+                // Calculate distance between two parallel lines
+                const distance = Math.abs(c4 - c5) / Math.sqrt(a4 * a4 + b4 * b4);
+                document.getElementById('lineToLineDistanceResult').innerText = `Distance between the two parallel lines: ${distance.toFixed(2)}`;
+            } else {
+                document.getElementById('lineToLineDistanceResult').innerText = 'The lines are not parallel.';
+            }
+        }
+
+        function calculateAngleBetweenLines() {
+            const m1 = parseFloat(document.getElementById('m1').value);
+            const m2 = parseFloat(document.getElementById('m2').value);
+
+            if (isNaN(m1) || isNaN(m2)) {
+                document.getElementById('angleBetweenLinesResult').innerText = 'Please enter valid slopes (numbers).';
+                return;
+            }
+
+            const angle = Math.atan(Math.abs((m2 - m1) / (1 + m1 * m2))) * (180 / Math.PI);
+            document.getElementById('angleBetweenLinesResult').innerText = `Angle between the lines: ${angle.toFixed(2)}°`;
+        }
+
+        function checkConcurrency() {
+            const a6 = parseFloat(document.getElementById('a6').value);
+            const b6 = parseFloat(document.getElementById('b6').value);
+            const c6 = parseFloat(document.getElementById('c6').value);
+            const a7 = parseFloat(document.getElementById('a7').value);
+            const b7 = parseFloat(document.getElementById('b7').value);
+            const c7 = parseFloat(document.getElementById('c7').value);
+            const a8 = parseFloat(document.getElementById('a8').value);
+            const b8 = parseFloat(document.getElementById('b8').value);
+            const c8 = parseFloat(document.getElementById('c8').value);
+
+            if (isNaN(a6) || isNaN(b6) || isNaN(c6) || isNaN(a7) || isNaN(b7) || isNaN(c7) || isNaN(a8) || isNaN(b8) || isNaN(c8)) {
+                document.getElementById('concurrencyResult').innerText = 'Please enter valid coefficients (numbers).';
+                return;
+            }
+
+            const det = a6 * (b7 * c8 - b8 * c7) - b6 * (a7 * c8 - a8 * c7) + c6 * (a7 * b8 - a8 * b7);
+
+            if (det === 0) {
+                document.getElementById('concurrencyResult').innerText = 'The lines are concurrent.';
+            } else {
+                document.getElementById('concurrencyResult').innerText = 'The lines are not concurrent.';
+            }
+        }
+
+        function calculateTriangleArea() {
+            const a1 = parseFloat(document.getElementById('a6').value);
+            const b1 = parseFloat(document.getElementById('b6').value);
+            const c1 = parseFloat(document.getElementById('c6').value);
+            const a2 = parseFloat(document.getElementById('a7').value);
+            const b2 = parseFloat(document.getElementById('b7').value);
+            const c2 = parseFloat(document.getElementById('c7').value);
+            const a3 = parseFloat(document.getElementById('a8').value);
+            const b3 = parseFloat(document.getElementById('b8').value);
+            const c3 = parseFloat(document.getElementById('c8').value);
+
+            if (isNaN(a1) || isNaN(b1) || isNaN(c1) || isNaN(a2) || isNaN(b2) || isNaN(c2) || isNaN(a3) || isNaN(b3) || isNaN(c3)) {
+                document.getElementById('triangleAreaResult').innerText = 'Please enter valid coefficients (numbers).';
+                return;
+            }
+
+            // Calculate vertices of the triangle formed by the intersection of these lines
+            const x1 = (-b1 * c2 + b2 * c1) / (a1 * b2 - a2 * b1);
+            const y1 = (-a1 * c2 + a2 * c1) / (a1 * b2 - a2 * b1);
+            const x2 = (-b2 * c3 + b3 * c2) / (a2 * b3 - a3 * b2);
+            const y2 = (-a2 * c3 + a3 * c2) / (a2 * b3 - a3 * b2);
+            const x3 = (-b3 * c1 + b1 * c3) / (a3 * b1 - a1 * b3);
+            const y3 = (-a3 * c1 + a1 * c3) / (a3 * b1 - a1 * b3);
+
+            // Calculate area using the vertices
+            const area = 0.5 * Math.abs(x1 * (y2 - y3) + x2 * (y3 - y1) + x3 * (y1 - y2));
+
+            document.getElementById('triangleAreaResult').innerText = `Area of Triangle: ${area.toFixed(2)}`;
+        }
+
+        function calculateQuadrilateralArea() {
+            const a1 = parseFloat(document.getElementById('a1').value);
+            const b1 = parseFloat(document.getElementById('b1').value);
+            const c1 = parseFloat(document.getElementById('c1').value);
+            const a2 = parseFloat(document.getElementById('a2').value);
+            const b2 = parseFloat(document.getElementById('b2').value);
+            const c2 = parseFloat(document.getElementById('c2').value);
+            const a3 = parseFloat(document.getElementById('a3').value);
+            const b3 = parseFloat(document.getElementById('b3').value);
+            const c3 = parseFloat(document.getElementById('c3').value);
+            const a4 = parseFloat(document.getElementById('a4').value);
+            const b4 = parseFloat(document.getElementById('b4').value);
+            const c4 = parseFloat(document.getElementById('c4').value);
+
+            if (isNaN(a1) || isNaN(b1) || isNaN(c1) || isNaN(a2) || isNaN(b2) || isNaN(c2) ||
+                isNaN(a3) || isNaN(b3) || isNaN(c3) || isNaN(a4) || isNaN(b4) || isNaN(c4)) {
+                document.getElementById('quadrilateralAreaResult').innerText = 'Please enter valid coefficients (numbers).';
+                return;
+            }
+
+            // Calculate vertices of the quadrilateral formed by the intersection of these lines
+            const x1 = (-b1 * c2 + b2 * c1) / (a1 * b2 - a2 * b1);
+            const y1 = (-a1 * c2 + a2 * c1) / (a1 * b2 - a2 * b1);
+            const x2 = (-b2 * c3 + b3 * c2) / (a2 * b3 - a3 * b2);
+            const y2 = (-a2 * c3 + a3 * c2) / (a2 * b3 - a3 * b2);
+            const x3 = (-b3 * c4 + b4 * c3) / (a3 * b4 - a4 * b3);
+            const y3 = (-a3 * c4 + a4 * c3) / (a3 * b4 - a4 * b3);
+            const x4 = (-b4 * c1 + b1 * c4) / (a4 * b1 - a1 * b4);
+            const y4 = (-a4 * c1 + a1 * c4) / (a4 * b1 - a1 * b4);
+
+            // Calculate area using the vertices
+            const area = 0.5 * Math.abs(x1 * (y2 - y3) + x2 * (y3 - y4) + x3 * (y4 - y1) + x4 * (y1 - y2));
+
+            document.getElementById('quadrilateralAreaResult').innerText = `Area of Quadrilateral: ${area.toFixed(2)}`;
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Point Properties and Calculations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        header {
+            background: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 5px 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background: #333;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #4CAF50;
+            font-size: 18px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        button {
+            background: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            padding: 5px 8px;
+            border-radius: 4px;
+        }
+
+        button:hover {
+            background: #555;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>POINT</h1>
+        </div>
+    </header>
+    <main class="container">
+        <section>
+            <h2>Definition</h2>
+            <p>A point is a specific position in a one-dimensional, two-dimensional, or three-dimensional space.</p>
+        </section>
+
+        <section>
+            <h2>Calculations</h2>
+            <h3>Distance between Two Points</h3>
+            <label for="x1">Point 1 (x1, y1, z1):</label>
+            <input type="text" id="x1" name="x1"> , <input type="text" id="y1" name="y1"> , <input type="text" id="z1"
+                name="z1"><br><br>
+
+            <label for="x2">Point 2 (x2, y2, z2):</label>
+            <input type="text" id="x2" name="x2"> , <input type="text" id="y2" name="y2"> , <input type="text" id="z2"
+                name="z2"><br><br>
+
+            <button onclick="calculateDistance()">Calculate Distance</button>
+            <p id="distanceResult"></p>
+
+            <h3>Section Formula</h3>
+            <label for="x3">Point 1 (x3, y3):</label>
+            <input type="text" id="x3" name="x3"> , <input type="text" id="y3" name="y3"><br><br>
+
+            <label for="x4">Point 2 (x4, y4):</label>
+            <input type="text" id="x4" name="x4"> , <input type="text" id="y4" name="y4"><br><br>
+
+            <label for="m">Ratio (m:n):</label>
+            <input type="text" id="m" name="m"> : <input type="text" id="n" name="n"><br><br>
+
+            <button onclick="calculateSection()">Calculate Section Point</button>
+            <p id="sectionResult"></p>
+
+            <h3>Find Ratio in which Point Divides Two Points</h3>
+            <label for="x8">Point 1 (x8, y8):</label>
+            <input type="text" id="x8" name="x8"> , <input type="text" id="y8" name="y8"><br><br>
+
+            <label for="x9">Point 2 (x9, y9):</label>
+            <input type="text" id="x9" name="x9"> , <input type="text" id="y9" name="y9"><br><br>
+
+            <label for="x10">Dividing Point (x10, y10):</label>
+            <input type="text" id="x10" name="x10"> , <input type="text" id="y10" name="y10"><br><br>
+
+            <button onclick="calculateDivisionRatio()">Calculate Ratio</button>
+            <p id="divisionRatioResult"></p>
+
+            <h3>Check Collinearity of Three Points</h3>
+            <label for="x5">Point 1 (x5, y5):</label>
+            <input type="text" id="x5" name="x5"> , <input type="text" id="y5" name="y5"><br><br>
+
+            <label for="x6">Point 2 (x6, y6):</label>
+            <input type="text" id="x6" name="x6"> , <input type="text" id="y6" name="y6"><br><br>
+
+            <label for="x7">Point 3 (x7, y7):</label>
+            <input type="text" id="x7" name="x7"> , <input type="text" id="y7" name="y7"><br><br>
+
+            <button onclick="checkCollinear()">Check Collinearity</button>
+            <p id="collinearResult"></p>
+
+
+
+            <h3>Calculate Coordinates of Triangle Centers</h3>
+
+            <h4>Centroid</h4>
+            <label for="cx1">Vertex 1 (x1, y1):</label>
+            <input type="text" id="cx1" name="cx1"> , <input type="text" id="cy1" name="cy1"><br><br>
+
+            <label for="cx2">Vertex 2 (x2, y2):</label>
+            <input type="text" id="cx2" name="cx2"> , <input type="text" id="cy2" name="cy2"><br><br>
+
+            <label for="cx3">Vertex 3 (x3, y3):</label>
+            <input type="text" id="cx3" name="cx3"> , <input type="text" id="cy3" name="cy3"><br><br>
+
+            <button onclick="calculateCentroid()">Calculate Centroid</button>
+            <p id="centroidResult"></p>
+
+            <h4>Incenter</h4>
+            <label for="ix1">Vertex 1 (x1, y1):</label>
+            <input type="text" id="ix1" name="ix1"> , <input type="text" id="iy1" name="iy1"><br><br>
+
+            <label for="ix2">Vertex 2 (x2, y2):</label>
+            <input type="text" id="ix2" name="ix2"> , <input type="text" id="iy2" name="iy2"><br><br>
+
+            <label for="ix3">Vertex 3 (x3, y3):</label>
+            <input type="text" id="ix3" name="ix3"> , <input type="text" id="iy3" name="iy3"><br><br>
+
+            <button onclick="calculateIncenter()">Calculate Incenter</button>
+            <p id="incenterResult"></p>
+
+            <h4>Excenters (Excenter 1)</h4>
+            <label for="ex1x">Vertex 1 (x1, y1):</label>
+            <input type="text" id="ex1x" name="ex1x"> , <input type="text" id="ex1y" name="ex1y"><br><br>
+
+            <label for="ex2x">Vertex 2 (x2, y2):</label>
+            <input type="text" id="ex2x" name="ex2x"> , <input type="text" id="ex2y" name="ex2y"><br><br>
+
+            <label for="ex3x">Vertex 3 (x3, y3):</label>
+            <input type="text" id="ex3x" name="ex3x"> , <input type="text" id="ex3y" name="ex3y"><br><br>
+
+            <button onclick="calculateExcenters()">Calculate Excenters</button>
+            <p id="excentersResult"></p>
+
+            <h4>Circumcenter</h4>
+            <label for="circx1">Vertex 1 (x1, y1):</label>
+            <input type="text" id="circx1" name="circx1"> , <input type="text" id="circy1" name="circy1"><br><br>
+
+            <label for="circx2">Vertex 2 (x2, y2):</label>
+            <input type="text" id="circx2" name="circx2"> , <input type="text" id="circy2" name="circy2"><br><br>
+
+            <label for="circx3">Vertex 3 (x3, y3):</label>
+            <input type="text" id="circx3" name="circx3"> , <input type="text" id="circy3" name="circy3"><br><br>
+
+            <button onclick="calculateCircumcenter()">Calculate Circumcenter</button>
+            <p id="circumcenterResult"></p>
+
+            <h4>Orthocenter</h4>
+            <label for="orthx1">Vertex 1 (x1, y1):</label>
+            <input type="text" id="orthx1" name="orthx1"> , <input type="text" id="orthy1" name="orthy1"><br><br>
+
+            <label for="orthx2">Vertex 2 (x2, y2):</label>
+            <input type="text" id="orthx2" name="orthx2"> , <input type="text" id="orthy2" name="orthy2"><br><br>
+
+            <label for="orthx3">Vertex 3 (x3, y3):</label>
+            <input type="text" id="orthx3" name="orthx3"> , <input type="text" id="orthy3" name="orthy3"><br><br>
+
+            <button onclick="calculateOrthocenter()">Calculate Orthocenter</button>
+            <p id="orthocenterResult"></p>
+
+
+
+
+
+        </section>
+
+
+        <a href="../index.html">Back to Topics</a>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Point Properties. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function calculateDistance() {
+            const x1 = parseFloat(document.getElementById('x1').value);
+            const y1 = parseFloat(document.getElementById('y1').value);
+            const z1 = parseFloat(document.getElementById('z1').value) || 0;
+            const x2 = parseFloat(document.getElementById('x2').value);
+            const y2 = parseFloat(document.getElementById('y2').value);
+            const z2 = parseFloat(document.getElementById('z2').value) || 0;
+
+            if (isNaN(x1) || isNaN(y1) || isNaN(z1) || isNaN(x2) || isNaN(y2) || isNaN(z2)) {
+                document.getElementById('distanceResult').innerText = 'Please enter valid coordinates (numbers).';
+                return;
+            }
+
+            const distance2D = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+            const distance3D = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2) + Math.pow(z2 - z1, 2));
+
+            document.getElementById('distanceResult').innerText = `Distance in 2D: ${distance2D.toFixed(2)}, Distance in 3D: ${distance3D.toFixed(2)}`;
+        }
+
+        function calculateSection() {
+            const x3 = parseFloat(document.getElementById('x3').value);
+            const y3 = parseFloat(document.getElementById('y3').value);
+            const x4 = parseFloat(document.getElementById('x4').value);
+            const y4 = parseFloat(document.getElementById('y4').value);
+            const m = parseFloat(document.getElementById('m').value);
+            const n = parseFloat(document.getElementById('n').value);
+
+            if (isNaN(x3) || isNaN(y3) || isNaN(x4) || isNaN(y4) || isNaN(m) || isNaN(n) || m <= 0 || n <= 0) {
+                document.getElementById('sectionResult').innerText = 'Please enter valid coordinates and ratio (positive numbers).';
+                return;
+            }
+
+            const x = (m * x4 + n * x3) / (m + n);
+            const y = (m * y4 + n * y3) / (m + n);
+
+            document.getElementById('sectionResult').innerText = `Section Point (x, y): (${x.toFixed(2)}, ${y.toFixed(2)})`;
+        }
+        function calculateDivisionRatio() {
+            const x8 = parseFloat(document.getElementById('x8').value);
+            const y8 = parseFloat(document.getElementById('y8').value);
+            const x9 = parseFloat(document.getElementById('x9').value);
+            const y9 = parseFloat(document.getElementById('y9').value);
+            const x10 = parseFloat(document.getElementById('x10').value);
+            const y10 = parseFloat(document.getElementById('y10').value);
+
+            if (isNaN(x8) || isNaN(y8) || isNaN(x9) || isNaN(y9) || isNaN(x10) || isNaN(y10)) {
+                document.getElementById('divisionRatioResult').innerText = 'Please enter valid coordinates (numbers).';
+                return;
+            }
+
+            // Calculate the ratio m:n
+            const m = (x10 - x9) / (x8 - x10);
+            const n = (y10 - y9) / (y8 - y10);
+
+            if (m === n) {
+                document.getElementById('divisionRatioResult').innerText = `The ratio in which the point divides the segment is ${m.toFixed(2)}:1.`;
+            } else {
+                document.getElementById('divisionRatioResult').innerText = `The point does not divide the segment in a consistent ratio for x and y coordinates.`;
+            }
+        }
+
+        function checkCollinear() {
+            const x5 = parseFloat(document.getElementById('x5').value);
+            const y5 = parseFloat(document.getElementById('y5').value);
+            const x6 = parseFloat(document.getElementById('x6').value);
+            const y6 = parseFloat(document.getElementById('y6').value);
+            const x7 = parseFloat(document.getElementById('x7').value);
+            const y7 = parseFloat(document.getElementById('y7').value);
+
+            if (isNaN(x5) || isNaN(y5) || isNaN(x6) || isNaN(y6) || isNaN(x7) || isNaN(y7)) {
+                document.getElementById('collinearResult').innerText = 'Please enter valid coordinates (numbers).';
+                return;
+            }
+
+            const area = x5 * (y6 - y7) + x6 * (y7 - y5) + x7 * (y5 - y6);
+            const collinear = area === 0;
+
+            document.getElementById('collinearResult').innerText = collinear ? 'The points are collinear.' : 'The points are not collinear.';
+        }
+
+        function calculateCentroid() {
+            const x1 = parseFloat(document.getElementById('cx1').value);
+            const y1 = parseFloat(document.getElementById('cy1').value);
+            const x2 = parseFloat(document.getElementById('cx2').value);
+            const y2 = parseFloat(document.getElementById('cy2').value);
+            const x3 = parseFloat(document.getElementById('cx3').value);
+            const y3 = parseFloat(document.getElementById('cy3').value);
+
+            if (isNaN(x1) || isNaN(y1) || isNaN(x2) || isNaN(y2) || isNaN(x3) || isNaN(y3)) {
+                document.getElementById('centroidResult').innerText = 'Please enter valid coordinates (numbers).';
+                return;
+            }
+
+            const cx = (x1 + x2 + x3) / 3;
+            const cy = (y1 + y2 + y3) / 3;
+
+            document.getElementById('centroidResult').innerText = `Centroid (Cx, Cy): (${cx.toFixed(2)}, ${cy.toFixed(2)})`;
+        }
+
+        function calculateIncenter() {
+            const x1 = parseFloat(document.getElementById('ix1').value);
+            const y1 = parseFloat(document.getElementById('iy1').value);
+            const x2 = parseFloat(document.getElementById('ix2').value);
+            const y2 = parseFloat(document.getElementById('iy2').value);
+            const x3 = parseFloat(document.getElementById('ix3').value);
+            const y3 = parseFloat(document.getElementById('iy3').value);
+
+            if (isNaN(x1) || isNaN(y1) || isNaN(x2) || isNaN(y2) || isNaN(x3) || isNaN(y3)) {
+                document.getElementById('incenterResult').innerText = 'Please enter valid coordinates (numbers).';
+                return;
+            }
+
+            const a = Math.sqrt(Math.pow(x2 - x3, 2) + Math.pow(y2 - y3, 2));
+            const b = Math.sqrt(Math.pow(x3 - x1, 2) + Math.pow(y3 - y1, 2));
+            const c = Math.sqrt(Math.pow(x1 - x2, 2) + Math.pow(y1 - y2, 2));
+
+            const ix = (a * x1 + b * x2 + c * x3) / (a + b + c);
+            const iy = (a * y1 + b * y2 + c * y3) / (a + b + c);
+
+            document.getElementById('incenterResult').innerText = `Incenter (Ix, Iy): (${ix.toFixed(2)}, ${iy.toFixed(2)})`;
+        }
+
+        function calculateExcenters() {
+            const x1 = parseFloat(document.getElementById('ex1x').value);
+            const y1 = parseFloat(document.getElementById('ex1y').value);
+            const x2 = parseFloat(document.getElementById('ex2x').value);
+            const y2 = parseFloat(document.getElementById('ex2y').value);
+            const x3 = parseFloat(document.getElementById('ex3x').value);
+            const y3 = parseFloat(document.getElementById('ex3y').value);
+
+            if (isNaN(x1) || isNaN(y1) || isNaN(x2) || isNaN(y2) || isNaN(x3) || isNaN(y3)) {
+                document.getElementById('excentersResult').innerText = 'Please enter valid coordinates (numbers).';
+                return;
+            }
+
+            const a = Math.sqrt(Math.pow(x2 - x3, 2) + Math.pow(y2 - y3, 2));
+            const b = Math.sqrt(Math.pow(x3 - x1, 2) + Math.pow(y3 - y1, 2));
+            const c = Math.sqrt(Math.pow(x1 - x2, 2) + Math.pow(y1 - y2, 2));
+
+            const s = (a + b + c) / 2;
+            const A = Math.sqrt(s * (s - a) * (s - b) * (s - c));
+
+            const ex1 = (-a * x1 + b * x2 + c * x3) / (-a + b + c);
+            const ey1 = (-a * y1 + b * y2 + c * y3) / (-a + b + c);
+
+            document.getElementById('excentersResult').innerText = `Excenter (Ex1, Ey1): (${ex1.toFixed(2)}, ${ey1.toFixed(2)})`;
+        }
+
+
+
+        function calculateCircumcenter() {
+            const x1 = parseFloat(document.getElementById('circx1').value);
+            const y1 = parseFloat(document.getElementById('circy1').value);
+            const x2 = parseFloat(document.getElementById('circx2').value);
+            const y2 = parseFloat(document.getElementById('circy2').value);
+            const x3 = parseFloat(document.getElementById('circx3').value);
+            const y3 = parseFloat(document.getElementById('circy3').value);
+
+            if (isNaN(x1) || isNaN(y1) || isNaN(x2) || isNaN(y2) || isNaN(x3) || isNaN(y3)) {
+                document.getElementById('circumcenterResult').innerText = 'Please enter valid coordinates (numbers).';
+                return;
+            }
+
+            const D = 2 * (x1 * (y2 - y3) + x2 * (y3 - y1) + x3 * (y1 - y2));
+            const Ux = ((x1 * x1 + y1 * y1) * (y2 - y3) + (x2 * x2 + y2 * y2) * (y3 - y1) + (x3 * x3 + y3 * y3) * (y1 - y2)) / D;
+            const Uy = ((x1 * x1 + y1 * y1) * (x3 - x2) + (x2 * x2 + y2 * y2) * (x1 - x3) + (x3 * x3 + y3 * y3) * (x2 - x1)) / D;
+
+            document.getElementById('circumcenterResult').innerText = `Circumcenter (Cx, Cy): (${Ux.toFixed(2)}, ${Uy.toFixed(2)})`;
+        }
+
+        function calculateOrthocenter() {
+            const x1 = parseFloat(document.getElementById('orthx1').value);
+            const y1 = parseFloat(document.getElementById('orthy1').value);
+            const x2 = parseFloat(document.getElementById('orthx2').value);
+            const y2 = parseFloat(document.getElementById('orthy2').value);
+            const x3 = parseFloat(document.getElementById('orthx3').value);
+            const y3 = parseFloat(document.getElementById('orthy3').value);
+
+            if (isNaN(x1) || isNaN(y1) || isNaN(x2) || isNaN(y2) || isNaN(x3) || isNaN(y3)) {
+                document.getElementById('orthocenterResult').innerText = 'Please enter valid coordinates (numbers).';
+                return;
+            }
+
+            const m1 = (y2 - y1) / (x2 - x1);
+            const m2 = (y3 - y2) / (x3 - x2);
+            const m3 = (y1 - y3) / (x1 - x3);
+
+            const xh = ((m1 * m2 * (y3 - y1)) + (m1 * (x2 + x3)) - (m2 * (x1 + x2))) / (2 * (m1 - m2));
+            const yh = ((y1 + y2) / 2) - ((xh - (x1 + x2) / 2) / m1);
+
+            document.getElementById('orthocenterResult').innerText = `Orthocenter (Hx, Hy): (${xh.toFixed(2)}, ${yh.toFixed(2)})`;
+        }
+
+    </script>
+</body>
+
+</html>

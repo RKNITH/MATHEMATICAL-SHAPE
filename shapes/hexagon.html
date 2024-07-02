@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hexagon Properties and Formulas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        header {
+            background: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 5px 0;
+        }
+
+        .shape {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            position: relative;
+        }
+
+        .hexagon {
+            width: 100px;
+            height: 100px;
+            background-color: #333;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background: #333;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #4CAF50;
+            font-size: 18px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        button {
+            background: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            padding: 5px 8px;
+            border-radius: 4px;
+        }
+
+        button:hover {
+            background: #555;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>HEXAGON</h1>
+        </div>
+    </header>
+
+    <main class="container">
+        <section>
+            <h2>Definition</h2>
+            <p>A hexagon is a six-sided polygon with six angles.</p>
+        </section>
+
+        <section>
+            <h2>Properties</h2>
+            <ul>
+                <li>Has six sides and six angles.</li>
+                <li>The sum of the interior angles is 720°.</li>
+                <li>In a regular hexagon, all sides and all angles are equal.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Formulas</h2>
+            <ul>
+                <li><strong>Area (for regular hexagon):</strong> A = (3√3/2) * a²</li>
+                <li><strong>Perimeter:</strong> P = 6a</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Calculate Area of Hexagon from Vertices</h2>
+            <p>Enter the coordinates of the vertices:</p>
+            <label for="x1">Vertex 1 (x1, y1):</label>
+            <input type="text" id="x1" name="x1"> , <input type="text" id="y1" name="y1"><br><br>
+
+            <label for="x2">Vertex 2 (x2, y2):</label>
+            <input type="text" id="x2" name="x2"> , <input type="text" id="y2" name="y2"><br><br>
+
+            <label for="x3">Vertex 3 (x3, y3):</label>
+            <input type="text" id="x3" name="x3"> , <input type="text" id="y3" name="y3"><br><br>
+
+            <label for="x4">Vertex 4 (x4, y4):</label>
+            <input type="text" id="x4" name="x4"> , <input type="text" id="y4" name="y4"><br><br>
+
+            <label for="x5">Vertex 5 (x5, y5):</label>
+            <input type="text" id="x5" name="x5"> , <input type="text" id="y5" name="y5"><br><br>
+
+            <label for="x6">Vertex 6 (x6, y6):</label>
+            <input type="text" id="x6" name="x6"> , <input type="text" id="y6" name="y6"><br><br>
+
+            <button onclick="calculateArea()">Calculate Area</button>
+            <p id="result"></p>
+        </section>
+
+        <section>
+            <h2>Calculate Sixth Vertex of Hexagon</h2>
+            <p>Enter the coordinates of five vertices to find the sixth:</p>
+            <label for="v1x">Vertex 1 (x1, y1):</label>
+            <input type="text" id="v1x" name="v1x"> , <input type="text" id="v1y" name="v1y"><br><br>
+
+            <label for="v2x">Vertex 2 (x2, y2):</label>
+            <input type="text" id="v2x" name="v2x"> , <input type="text" id="v2y" name="v2y"><br><br>
+
+            <label for="v3x">Vertex 3 (x3, y3):</label>
+            <input type="text" id="v3x" name="v3x"> , <input type="text" id="v3y" name="v3y"><br><br>
+
+            <label for="v4x">Vertex 4 (x4, y4):</label>
+            <input type="text" id="v4x" name="v4x"> , <input type="text" id="v4y" name="v4y"><br><br>
+
+            <label for="v5x">Vertex 5 (x5, y5):</label>
+            <input type="text" id="v5x" name="v5x"> , <input type="text" id="v5y" name="v5y"><br><br>
+
+            <button onclick="calculateSixthVertex()">Calculate Sixth Vertex</button>
+            <p id="sixthVertexResult"></p>
+        </section>
+
+        <a href="../index.html">Back to Topics</a>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Hexagon Properties. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        function calculateArea() {
+            const x1 = parseFloat(document.getElementById('x1').value);
+            const y1 = parseFloat(document.getElementById('y1').value);
+            const x2 = parseFloat(document.getElementById('x2').value);
+            const y2 = parseFloat(document.getElementById('y2').value);
+            const x3 = parseFloat(document.getElementById('x3').value);
+            const y3 = parseFloat(document.getElementById('y3').value);
+            const x4 = parseFloat(document.getElementById('x4').value);
+            const y4 = parseFloat(document.getElementById('y4').value);
+            const x5 = parseFloat(document.getElementById('x5').value);
+            const y5 = parseFloat(document.getElementById('y5').value);
+            const x6 = parseFloat(document.getElementById('x6').value);
+            const y6 = parseFloat(document.getElementById('y6').value);
+
+            // Check if inputs are valid numbers
+            if (isNaN(x1) || isNaN(y1) || isNaN(x2) || isNaN(y2) || isNaN(x3) || isNaN(y3) || isNaN(x4) || isNaN(y4) || isNaN(x5) || isNaN(y5) || isNaN(x6) || isNaN(y6)) {
+                document.getElementById('result').innerText = 'Please enter valid coordinates (numbers).';
+                return;
+            }
+
+            // Calculate the area using the Shoelace formula
+            const area = 0.5 * Math.abs(
+                x1 * y2 + x2 * y3 + x3 * y4 + x4 * y5 + x5 * y6 + x6 * y1 -
+                y1 * x2 - y2 * x3 - y3 * x4 - y4 * x5 - y5 * x6 - y6 * x1
+            );
+
+            // Display result
+            document.getElementById('result').innerText = 'Area of the hexagon is ' + area.toFixed(2) + ' square units.';
+        }
+
+        function calculateSixthVertex() {
+            const x1 = parseFloat(document.getElementById('v1x').value);
+            const y1 = parseFloat(document.getElementById('v1y').value);
+            const x2 = parseFloat(document.getElementById('v2x').value);
+            const y2 = parseFloat(document.getElementById('v2y').value);
+            const x3 = parseFloat(document.getElementById('v3x').value);
+            const y3 = parseFloat(document.getElementById('v3y').value);
+            const x4 = parseFloat(document.getElementById('v4x').value);
+            const y4 = parseFloat(document.getElementById('v4y').value);
+            const x5 = parseFloat(document.getElementById('v5x').value);
+            const y5 = parseFloat(document.getElementById('v5y').value);
+
+            // Check if inputs are valid numbers
+            if (isNaN(x1) || isNaN(y1) || isNaN(x2) || isNaN(y2) || isNaN(x3) || isNaN(y3) || isNaN(x4) || isNaN(y4) || isNaN(x5) || isNaN(y5)) {
+                document.getElementById('sixthVertexResult').innerText = 'Please enter valid coordinates (numbers).';
+                return;
+            }
+
+            // Calculate the centroid of the given five points
+            const centroidX = (x1 + x2 + x3 + x4 + x5) / 5;
+            const centroidY = (y1 + y2 + y3 + y4 + y5) / 5;
+
+            // Calculate the sixth vertex assuming it's a regular hexagon
+            const sixthVertexX = 2 * centroidX - x3;
+            const sixthVertexY = 2 * centroidY - y3;
+
+            // Display result
+            document.getElementById('sixthVertexResult').innerText = 'The sixth vertex is approximately (' + sixthVertexX.toFixed(2) + ', ' + sixthVertexY.toFixed(2) + ').';
+        }
+
+    </script>
+
+</body>
+
+</html>

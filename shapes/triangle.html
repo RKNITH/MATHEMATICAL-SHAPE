@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triangle</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        header {
+            background: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 5px 0;
+        }
+
+        .shape {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            position: relative;
+        }
+
+        .equilateral {
+            width: 0;
+            height: 0;
+            border-left: 50px solid transparent;
+            border-right: 50px solid transparent;
+            border-bottom: 86.6px solid #333;
+        }
+
+        .isosceles {
+            width: 0;
+            height: 0;
+            border-left: 50px solid transparent;
+            border-right: 50px solid transparent;
+            border-bottom: 86.6px solid #666;
+        }
+
+        .scalene {
+            width: 0;
+            height: 0;
+            border-left: 40px solid transparent;
+            border-right: 60px solid transparent;
+            border-bottom: 86.6px solid #999;
+        }
+
+        .right {
+            width: 0;
+            height: 0;
+            border-right: 50px solid #333;
+            border-bottom: 50px solid transparent;
+        }
+
+        .acute {
+            width: 0;
+            height: 0;
+            border-left: 50px solid transparent;
+            border-right: 50px solid transparent;
+            border-bottom: 60px solid #ccc;
+        }
+
+        .obtuse {
+            width: 0;
+            height: 0;
+            border-left: 60px solid transparent;
+            border-right: 40px solid transparent;
+            border-bottom: 50px solid #666;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background: #333;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        input[type="text"],
+        button {
+            margin: 5px 0;
+            padding: 10px;
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        button {
+            background: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #555;
+        }
+
+        a {
+            text-decoration: none;
+            color: #4CAF50;
+            font-size: 18px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>Triangle</h1>
+        </div>
+    </header>
+
+    <main class="container">
+        <section>
+            <h2>Definition</h2>
+            <p>A triangle is a polygon with three edges and three vertices. It is one of the basic shapes in geometry.
+            </p>
+        </section>
+
+        <section>
+            <h2>Types of Triangles</h2>
+            <h3>Based on Sides</h3>
+            <ul>
+                <li>Equilateral Triangle: All sides are equal. <div class="shape equilateral"></div>
+                </li>
+                <li>Isosceles Triangle: Two sides are equal. <div class="shape isosceles"></div>
+                </li>
+                <li>Scalene Triangle: All sides are different. <div class="shape scalene"></div>
+                </li>
+            </ul>
+            <h3>Based on Angles</h3>
+            <ul>
+                <li>Right Triangle: One angle is 90 degrees. <div class="shape right"></div>
+                </li>
+                <li>Acute Triangle: All angles are less than 90 degrees. <div class="shape acute"></div>
+                </li>
+                <li>Obtuse Triangle: One angle is more than 90 degrees. <div class="shape obtuse"></div>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Formulas</h2>
+            <p>Area = 0.5 * base * height</p>
+            <p>Perimeter = sum of all sides</p>
+            <p>For a right triangle: a² + b² = c² (Pythagorean Theorem)</p>
+            <p>Cosine Rule: c² = a² + b² - 2ab * cos(C)</p>
+            <p>Sine Rule: a / sin(A) = b / sin(B) = c / sin(C)=2R, where R is radius of circumcircle.</p>
+            <p>Tangent Rule (Tangent of Half-Angle): tan(A/2) = sqrt((s-b)(s-c) / s(s-a))</p>
+            <p>Length of median mₐ from vertex A: mₐ = 1/2 √(2b² + 2c² - a²)</p>
+            <p>Length of angle bisector dₐ from vertex A: dₐ = 2bc / (b+c) cos(A/2)</p>
+            <p> Length of altitude hₐ from vertex A: hₐ = 2 × Area / a</p>
+            <p>The centroid divides each median in the ratio 2:1, closer to the vertex.</p>
+            <p>The orthocenter can be inside, outside, or on the triangle depending on the type of triangle.</p>
+            <p>The incenter is equidistant from the sides of the triangle, and the distance to each side is the radius
+                of the incircle (circle tangent to all three sides of the triangle).</p>
+            <p>In any triangle, the centroid, orthocenter, and circumcenter (center of the circumscribed circle) are
+                collinear. The centroid divides the line joining the orthocenter and circumcenter in the ratio 2:1.</p>
+        </section>
+
+        <section>
+            <h2>Calculate Area from Vertices</h2>
+            <p>Enter the coordinates of the vertices:</p>
+            <label for="x1">x1:</label><input type="text" id="x1">
+            <label for="y1">y1:</label><input type="text" id="y1">
+            <label for="x2">x2:</label><input type="text" id="x2">
+            <label for="y2">y2:</label><input type="text" id="y2">
+            <label for="x3">x3:</label><input type="text" id="x3">
+            <label for="y3">y3:</label><input type="text" id="y3">
+            <button onclick="calculateArea()">Calculate Area</button>
+            <p id="result"></p>
+        </section>
+        <section>
+            <h2>Heron's Formula</h2>
+            <p>Heron's formula is used to find the area of a triangle when all three side lengths are known.</p>
+            <p><strong>Formula:</strong> Area = √(s * (s - a) * (s - b) * (s - c))</p>
+            <p>where,</p>
+            <ul>
+                <li><strong>s</strong> = (a + b + c) / 2 (semi-perimeter of the triangle)</li>
+                <li><strong>a</strong> = length of side A</li>
+                <li><strong>b</strong> = length of side B</li>
+                <li><strong>c</strong> = length of side C</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Calculate Area from Sides (Heron's Formula)</h2>
+            <p>Enter the lengths of the sides:</p>
+            <label for="sideA">Side A:</label><input type="text" id="sideA">
+            <label for="sideB">Side B:</label><input type="text" id="sideB">
+            <label for="sideC">Side C:</label><input type="text" id="sideC">
+            <button onclick="calculateAreaFromSides()">Calculate Area</button>
+            <p id="resultSides"></p>
+        </section>
+        <section>
+            <h2>Calculate Area from Two Sides and Included Angle</h2>
+            <p>Enter the lengths of sides and the included angle in degrees:</p>
+            <label for="side1">Side A:</label><input type="text" id="side1">
+            <label for="side2">Side B:</label><input type="text" id="side2">
+            <label for="angle">Included Angle (degrees):</label><input type="text" id="angle">
+            <button onclick="calculateAreaFromSidesAndAngle()">Calculate Area</button>
+            <p id="resultSidesAngle"></p>
+        </section>
+        <section>
+            <h2>Calculate Area from Two Angles and One Side Given using Sine Rule</h2>
+            <p>Enter the values of two angles in degrees and the length of one side:</p>
+            <label for="angleA2">Angle A (degrees):</label><input type="text" id="angleA2">
+            <label for="angleB2">Angle B (degrees):</label><input type="text" id="angleB2">
+            <label for="sideC2">Side C:</label><input type="text" id="sideC2">
+            <button onclick="calculateAreaSineRule()">Calculate Area</button>
+            <p id="resultAnglesSideSine"></p>
+        </section>
+        <section>
+            <h2>Calculate Third Vertex of Equilateral Triangle</h2>
+            <p>Enter the coordinates of two vertices to find the third:</p>
+            <label for="v1x">Vertex 1 (x1, y1):</label>
+            <input type="text" id="v1x" name="v1x"> , <input type="text" id="v1y" name="v1y"><br><br>
+
+            <label for="v2x">Vertex 2 (x2, y2):</label>
+            <input type="text" id="v2x" name="v2x"> , <input type="text" id="v2y" name="v2y"><br><br>
+
+            <button onclick="calculateThirdVertex()">Calculate Third Vertex</button>
+            <p id="thirdVertexResult"></p>
+        </section>
+
+
+        <section>
+            <h2>Median</h2>
+            <p><strong>Definition:</strong> A median of a triangle is a line segment that connects a vertex to the
+                midpoint of the opposite side.</p>
+            <p><strong>Point of Intersection:</strong> The three medians of a triangle intersect at a single point
+                called the centroid.</p>
+            <p><strong>Relationships in Different Triangles:</strong></p>
+            <ul>
+                <li><strong>Equilateral Triangle:</strong> All three medians are equal in length and intersect at the
+                    centroid.</li>
+                <li><strong>Right Triangle:</strong> The median to the hypotenuse is half the length of the hypotenuse.
+                </li>
+                <li><strong>Isosceles Triangle:</strong> Two medians are equal in length and intersect at the centroid.
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Angle Bisector</h2>
+            <p><strong>Definition:</strong> An angle bisector of a triangle is a line segment that divides an angle into
+                two equal parts.</p>
+            <p><strong>Point of Intersection:</strong> The three angle bisectors of a triangle intersect at a single
+                point called the incenter.</p>
+            <p><strong>Relationships in Different Triangles:</strong></p>
+            <ul>
+                <li><strong>Equilateral Triangle:</strong> All three angle bisectors are equal in length and intersect
+                    at the incenter.</li>
+                <li><strong>Right Triangle:</strong> The angle bisector to the right angle divides the opposite side
+                    into segments proportional to the other two sides.</li>
+                <li><strong>Isosceles Triangle:</strong> Two angle bisectors are equal in length and intersect at the
+                    incenter.</li>
+            </ul>
+        </section>
+
+
+        <section>
+            <h2>Altitude</h2>
+            <p><strong>Definition:</strong> An altitude of a triangle is a perpendicular line segment from a vertex to
+                the line containing the opposite side.</p>
+            <p><strong>Point of Intersection:</strong> The three altitudes of a triangle intersect at a single point
+                called the orthocenter.</p>
+            <p><strong>Relationships in Different Triangles:</strong></p>
+            <ul>
+                <li><strong>Equilateral Triangle:</strong> All three altitudes are equal in length and intersect at the
+                    orthocenter.</li>
+                <li><strong>Right Triangle:</strong> The altitude from the right angle to the hypotenuse is equal to
+                    half the length of the hypotenuse.</li>
+                <li><strong>Isosceles Triangle:</strong> Two altitudes are equal in length and intersect at the
+                    orthocenter.</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Circumcircle</h2>
+            <p>
+                The circumcircle of a triangle is the unique circle that passes through all three vertices of the
+                triangle.
+            </p>
+            <ul>
+                <li>It is the smallest circle that can enclose the triangle.</li>
+                <li>The center of the circumcircle is called the circumcenter.</li>
+                <li>The circumcenter is the point of concurrency of the perpendicular bisectors of the sides of the
+                    triangle.</li>
+                <li>The radius of the circumcircle (denoted as R) can be calculated using different formulas, such as:
+                    <ul>
+                        <li>For a triangle with sides a, b, c and area Δ:
+                            <p>R = abc / (4Δ)</p>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Incircle</h2>
+            <p>
+                The incircle of a triangle is the unique circle that is tangent to all three sides of the triangle.
+            </p>
+            <h2>Properties of the Incircle</h2>
+            <ul>
+                <li>The center of the incircle is called the incenter.</li>
+                <li>The incenter is the point of concurrency of the angle bisectors of the triangle.</li>
+                <li>The radius of the incircle (denoted as r) can be calculated using different formulas, such as:
+                    <ul>
+                        <li>For a triangle with sides a, b, c and semi-perimeter s:
+                            <p>r = Δ / s</p>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+        <a href="../index.html">Back to Topics</a>
+
+
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Mathematical Shapes. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function calculateArea() {
+            const x1 = parseFloat(document.getElementById('x1').value);
+            const y1 = parseFloat(document.getElementById('y1').value);
+            const x2 = parseFloat(document.getElementById('x2').value);
+            const y2 = parseFloat(document.getElementById('y2').value);
+            const x3 = parseFloat(document.getElementById('x3').value);
+            const y3 = parseFloat(document.getElementById('y3').value);
+
+            if (isNaN(x1) || isNaN(y1) || isNaN(x2) || isNaN(y2) || isNaN(x3) || isNaN(y3)) {
+                document.getElementById('result').innerText = 'Please enter valid numbers.';
+                return;
+            }
+
+            const area = Math.abs((x1 * (y2 - y3) + x2 * (y3 - y1) + x3 * (y1 - y2)) / 2.0);
+            document.getElementById('result').innerText = 'The area of the triangle is ' + area;
+        }
+
+        function calculateAreaFromSides() {
+            const a = parseFloat(document.getElementById('sideA').value);
+            const b = parseFloat(document.getElementById('sideB').value);
+            const c = parseFloat(document.getElementById('sideC').value);
+
+            if (isNaN(a) || isNaN(b) || isNaN(c) || a <= 0 || b <= 0 || c <= 0) {
+                document.getElementById('resultSides').innerText = 'Please enter valid side lengths.';
+                return;
+            }
+
+            const s = (a + b + c) / 2;
+            const area = Math.sqrt(s * (s - a) * (s - b) * (s - c));
+
+            if (isNaN(area)) {
+                document.getElementById('resultSides').innerText = 'The entered side lengths do not form a valid triangle.';
+            } else {
+                document.getElementById('resultSides').innerText = 'The area of the triangle is ' + area;
+            }
+        }
+
+        function calculateAreaFromSidesAndAngle() {
+            const side1 = parseFloat(document.getElementById('side1').value);
+            const side2 = parseFloat(document.getElementById('side2').value);
+            const angleDegrees = parseFloat(document.getElementById('angle').value);
+
+            if (isNaN(side1) || isNaN(side2) || isNaN(angleDegrees) || side1 <= 0 || side2 <= 0 || angleDegrees <= 0 || angleDegrees >= 180) {
+                document.getElementById('resultSidesAngle').innerText = 'Please enter valid side lengths and angle (0 < angle < 180).';
+                return;
+            }
+
+            const angleRadians = angleDegrees * (Math.PI / 180); // Convert angle to radians
+            const area = 0.5 * side1 * side2 * Math.sin(angleRadians);
+
+            document.getElementById('resultSidesAngle').innerText = 'The area of the triangle is ' + area.toFixed(2);
+        }
+
+        function calculateAreaSineRule() {
+            const angleA = parseFloat(document.getElementById('angleA2').value);
+            const angleB = parseFloat(document.getElementById('angleB2').value);
+            const sideC = parseFloat(document.getElementById('sideC2').value);
+
+            if (isNaN(angleA) || isNaN(angleB) || isNaN(sideC) || angleA <= 0 || angleB <= 0 || sideC <= 0 || angleA + angleB >= 180) {
+                document.getElementById('resultAnglesSideSine').innerText = 'Please enter valid angles and side lengths (0 < angle < 180).';
+                return;
+            }
+
+            const angleC = 180 - angleA - angleB; // Calculate the third angle
+            const area = 0.5 * sideC * sideC * Math.sin(angleARad) / Math.sin(angleB * (Math.PI / 180));
+
+            document.getElementById('resultAnglesSideSine').innerText = 'The area of the triangle is ' + area.toFixed(2);
+        }
+        function calculateThirdVertex() {
+            const x1 = parseFloat(document.getElementById('v1x').value);
+            const y1 = parseFloat(document.getElementById('v1y').value);
+            const x2 = parseFloat(document.getElementById('v2x').value);
+            const y2 = parseFloat(document.getElementById('v2y').value);
+
+            // Check if inputs are valid numbers
+            if (isNaN(x1) || isNaN(y1) || isNaN(x2) || isNaN(y2)) {
+                document.getElementById('thirdVertexResult').innerText = 'Please enter valid coordinates (numbers).';
+                return;
+            }
+
+            // Calculate the length of the side
+            const side = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+
+            // Calculate the height of the equilateral triangle
+            const height = (Math.sqrt(3) / 2) * side;
+
+            // Midpoint of the base
+            const midX = (x1 + x2) / 2;
+            const midY = (y1 + y2) / 2;
+
+            // Slope of the perpendicular bisector
+            const slope = (x1 - x2) / (y2 - y1);
+
+            // Calculate the third vertex coordinates
+            const x3 = midX + height / Math.sqrt(1 + Math.pow(slope, 2));
+            const y3 = midY + height * slope / Math.sqrt(1 + Math.pow(slope, 2));
+
+            // Display result
+            document.getElementById('thirdVertexResult').innerText = 'The coordinates of the third vertex are (' + x3.toFixed(2) + ', ' + y3.toFixed(2) + ').';
+        }
+
+    </script>
+</body>
+
+</html>

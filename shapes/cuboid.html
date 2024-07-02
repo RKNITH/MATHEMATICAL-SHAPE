@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuboid Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            flex-direction: column;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .result {
+            margin-top: 20px;
+        }
+
+        .result p {
+            margin: 5px 0;
+        }
+
+        .cuboid-container {
+            perspective: 1000px;
+            width: 200px;
+            height: 200px;
+            margin: 40px;
+        }
+
+        .cuboid {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transform: rotateX(-30deg) rotateY(30deg);
+            animation: rotate 10s infinite linear;
+        }
+
+        .cuboid div {
+            position: absolute;
+            background: rgba(0, 123, 255, 0.7);
+            border: 2px solid #007bff;
+        }
+
+        .front {
+            width: 200px;
+            height: 100px;
+            transform: translateZ(100px);
+        }
+
+        .back {
+            width: 200px;
+            height: 100px;
+            transform: rotateY(180deg) translateZ(100px);
+        }
+
+        .right {
+            width: 100px;
+            height: 100px;
+            transform: rotateY(90deg) translateZ(100px);
+        }
+
+        .left {
+            width: 100px;
+            height: 100px;
+            transform: rotateY(-90deg) translateZ(100px);
+        }
+
+        .top {
+            width: 200px;
+            height: 100px;
+            transform: rotateX(90deg) translateZ(100px);
+        }
+
+        .bottom {
+            width: 200px;
+            height: 100px;
+            transform: rotateX(-90deg) translateZ(100px);
+        }
+
+        a {
+            text-decoration: none;
+            color: #4CAF50;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotateX(-30deg) rotateY(0deg);
+            }
+
+            to {
+                transform: rotateX(-30deg) rotateY(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Cuboid Calculator</h1>
+        <input type="number" id="length" placeholder="Enter length (l)">
+        <input type="number" id="width" placeholder="Enter width (w)">
+        <input type="number" id="height" placeholder="Enter height (h)">
+        <button onclick="calculateCuboid()">Calculate</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <div class="cuboid-container">
+        <div class="cuboid">
+            <div class="front"></div>
+            <div class="back"></div>
+            <div class="right"></div>
+            <div class="left"></div>
+            <div class="top"></div>
+            <div class="bottom"></div>
+        </div>
+    </div>
+    <a href="../index.html">Back to Topics</a>
+
+    <script>
+        function calculateCuboid() {
+            const length = document.getElementById('length').value;
+            const width = document.getElementById('width').value;
+            const height = document.getElementById('height').value;
+
+            if (length > 0 && width > 0 && height > 0) {
+                const perimeterLengthWidth = 2 * (length + width);
+                const perimeterLengthHeight = 2 * (length + height);
+                const perimeterWidthHeight = 2 * (width + height);
+                const areaLengthWidth = length * width;
+                const areaLengthHeight = length * height;
+                const areaWidthHeight = width * height;
+                const surfaceArea = 2 * (areaLengthWidth + areaLengthHeight + areaWidthHeight);
+                const volume = length * width * height;
+
+                document.getElementById('result').innerHTML = `
+                    <p>Perimeter of length-width face: ${perimeterLengthWidth} units</p>
+                    <p>Perimeter of length-height face: ${perimeterLengthHeight} units</p>
+                    <p>Perimeter of width-height face: ${perimeterWidthHeight} units</p>
+                    <p>Area of length-width face: ${areaLengthWidth} square units</p>
+                    <p>Area of length-height face: ${areaLengthHeight} square units</p>
+                    <p>Area of width-height face: ${areaWidthHeight} square units</p>
+                    <p>Total Surface Area: ${surfaceArea} square units</p>
+                    <p>Volume: ${volume} cubic units</p>
+                `;
+            } else {
+                document.getElementById('result').innerHTML = `
+                    <p>Please enter positive dimensions for length, width, and height.</p>
+                `;
+            }
+        }
+    </script>
+</body>
+
+</html>

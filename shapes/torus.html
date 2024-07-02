@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Torus Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            flex-direction: column;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            outline: none;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .result {
+            margin-top: 20px;
+        }
+
+        .result p {
+            margin: 5px 0;
+        }
+
+        .torus-container {
+            perspective: 1000px;
+            width: 200px;
+            height: 200px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .torus {
+            width: 200px;
+            height: 200px;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: rotate 10s infinite linear;
+        }
+
+        .torus::before,
+        .torus::after {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border: 2px solid #007bff;
+            border-radius: 50%;
+            background-color: rgba(0, 123, 255, 0.7);
+            top: 0;
+            left: 50%;
+            transform-origin: 0 50%;
+        }
+
+        .torus::before {
+            transform: translateX(-100px) rotateY(90deg);
+        }
+
+        .torus::after {
+            transform: translateX(-100px) rotateY(-90deg);
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotateY(0deg);
+            }
+
+            to {
+                transform: rotateY(360deg);
+            }
+        }
+
+        a {
+            text-decoration: none;
+            color: #4CAF50;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Torus Calculator</h1>
+        <input type="number" id="majorRadius" placeholder="Enter major radius (R)">
+        <input type="number" id="minorRadius" placeholder="Enter minor radius (r)">
+        <button onclick="calculateTorus()">Calculate</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <div class="torus-container">
+        <div class="torus"></div>
+    </div>
+    <a href="../index.html">Back to Topics</a>
+
+    <script>
+        function calculateTorus() {
+            const majorRadius = document.getElementById('majorRadius').value;
+            const minorRadius = document.getElementById('minorRadius').value;
+            if (majorRadius > 0 && minorRadius > 0) {
+                const surfaceArea = 4 * Math.PI ** 2 * majorRadius * minorRadius;
+                const volume = 2 * Math.PI ** 2 * majorRadius * minorRadius ** 2;
+
+                document.getElementById('result').innerHTML = `
+                    <p>Surface Area: ${surfaceArea.toFixed(2)} square units</p>
+                    <p>Volume: ${volume.toFixed(2)} cubic units</p>
+                `;
+            } else {
+                document.getElementById('result').innerHTML = `
+                    <p>Please enter positive values for major radius (R) and minor radius (r).</p>
+                `;
+            }
+        }
+    </script>
+</body>
+
+</html>

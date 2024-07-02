@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trapezoid Properties and Formulas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        header {
+            background: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 5px 0;
+        }
+
+        .shape {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            position: relative;
+        }
+
+        .trapezoid {
+            width: 100px;
+            height: 60px;
+            background-color: #333;
+            clip-path: polygon(25% 0%, 75% 0%, 100% 100%, 0% 100%);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background: #333;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #4CAF50;
+            font-size: 18px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        button {
+            background: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            padding: 5px 8px;
+            border-radius: 4px;
+        }
+
+        button:hover {
+            background: #555;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>TRAPEZOID</h1>
+        </div>
+    </header>
+
+    <main class="container">
+        <section>
+            <h2>Definition</h2>
+            <p>A trapezoid (or trapezium) is a quadrilateral with at least one pair of parallel sides. The parallel
+                sides are called bases, and the non-parallel sides are called legs.</p>
+        </section>
+
+        <section>
+            <h2>Properties</h2>
+            <ul>
+                <li>Has at least one pair of parallel sides.</li>
+                <li>The angles between a base and a leg are supplementary.</li>
+                <li>In an isosceles trapezoid, the non-parallel sides (legs) are equal in length, and the base angles
+                    are equal.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Formulas</h2>
+            <ul>
+                <li><strong>Area:</strong> A = ((a + b) / 2) * h</li>
+                <li><strong>Perimeter:</strong> P = a + b + c + d</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Calculate Area of Trapezoid from Vertices</h2>
+            <p>Enter the coordinates of the vertices:</p>
+            <label for="x1">Vertex 1 (x1, y1):</label>
+            <input type="text" id="x1" name="x1"> , <input type="text" id="y1" name="y1"><br><br>
+
+            <label for="x2">Vertex 2 (x2, y2):</label>
+            <input type="text" id="x2" name="x2"> , <input type="text" id="y2" name="y2"><br><br>
+
+            <label for="x3">Vertex 3 (x3, y3):</label>
+            <input type="text" id="x3" name="x3"> , <input type="text" id="y3" name="y3"><br><br>
+
+            <label for="x4">Vertex 4 (x4, y4):</label>
+            <input type="text" id="x4" name="x4"> , <input type="text" id="y4" name="y4"><br><br>
+
+            <button onclick="calculateArea()">Calculate Area</button>
+            <p id="result"></p>
+        </section>
+
+        <section>
+            <h2>Calculate Fourth Vertex of Trapezoid</h2>
+            <p>Enter the coordinates of three vertices to find the fourth:</p>
+            <label for="v1x">Vertex 1 (x1, y1):</label>
+            <input type="text" id="v1x" name="v1x"> , <input type="text" id="v1y" name="v1y"><br><br>
+
+            <label for="v2x">Vertex 2 (x2, y2):</label>
+            <input type="text" id="v2x" name="v2x"> , <input type="text" id="v2y" name="v2y"><br><br>
+
+            <label for="v3x">Vertex 3 (x3, y3):</label>
+            <input type="text" id="v3x" name="v3x"> , <input type="text" id="v3y" name="v3y"><br><br>
+
+            <button onclick="calculateFourthVertex()">Calculate Fourth Vertex</button>
+            <p id="fourthVertexResult"></p>
+        </section>
+
+        <a href="../index.html">Back to Topics</a>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Trapezoid Properties. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function calculateArea() {
+            const x1 = parseFloat(document.getElementById('x1').value);
+            const y1 = parseFloat(document.getElementById('y1').value);
+            const x2 = parseFloat(document.getElementById('x2').value);
+            const y2 = parseFloat(document.getElementById('y2').value);
+            const x3 = parseFloat(document.getElementById('x3').value);
+            const y3 = parseFloat(document.getElementById('y3').value);
+            const x4 = parseFloat(document.getElementById('x4').value);
+            const y4 = parseFloat(document.getElementById('y4').value);
+
+            // Check if inputs are valid numbers
+            if (isNaN(x1) || isNaN(y1) || isNaN(x2) || isNaN(y2) || isNaN(x3) || isNaN(y3) || isNaN(x4) || isNaN(y4)) {
+                document.getElementById('result').innerText = 'Please enter valid coordinates (numbers).';
+                return;
+            }
+
+            // Calculate the lengths of the parallel sides (bases)
+            const base1 = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+            const base2 = Math.sqrt(Math.pow(x4 - x3, 2) + Math.pow(y4 - y3, 2));
+
+            // Calculate the height of the trapezoid
+            const height = Math.abs(y1 - y3);
+
+            // Calculate the area of the trapezoid
+            const area = ((base1 + base2) / 2) * height;
+
+            // Display result
+            document.getElementById('result').innerText = 'Area of the trapezoid is ' + area.toFixed(2) + ' square units.';
+        }
+
+        function calculateFourthVertex() {
+            const x1 = parseFloat(document.getElementById('v1x').value);
+            const y1 = parseFloat(document.getElementById('v1y').value);
+            const x2 = parseFloat(document.getElementById('v2x').value);
+            const y2 = parseFloat(document.getElementById('v2y').value);
+            const x3 = parseFloat(document.getElementById('v3x').value);
+            const y3 = parseFloat(document.getElementById('v3y').value);
+
+            // Check if inputs are valid numbers
+            if (isNaN(x1) || isNaN(y1) || isNaN(x2) || isNaN(y2) || isNaN(x3) || isNaN(y3)) {
+                document.getElementById('fourthVertexResult').innerText = 'Please enter valid coordinates (numbers).';
+                return;
+            }
+
+            // Calculate the fourth vertex coordinates
+            const x4 = x1 + x3 - x2;
+            const y4 = y1 + y3 - y2;
+
+            // Display the calculated fourth vertex
+            document.getElementById('result').innerText = `Fourth Vertex (x4, y4): (${x4.toFixed(2)}, ${y4.toFixed(2)})`;
+        }
+    </script>
+
+</body>
+
+</html>

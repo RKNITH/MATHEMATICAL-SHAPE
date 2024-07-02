@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cube Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            flex-direction: column;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .result {
+            margin-top: 20px;
+        }
+
+        .result p {
+            margin: 5px 0;
+        }
+
+        .cube-container {
+            perspective: 1000px;
+            width: 200px;
+            height: 200px;
+            margin: 40px;
+        }
+
+        .cube {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transform: rotateX(-30deg) rotateY(30deg);
+            animation: rotate 10s infinite linear;
+        }
+
+        .cube div {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 123, 255, 0.7);
+            border: 2px solid #007bff;
+        }
+
+        .front {
+            transform: translateZ(100px);
+        }
+
+        .back {
+            transform: rotateY(180deg) translateZ(100px);
+        }
+
+        .right {
+            transform: rotateY(90deg) translateZ(100px);
+        }
+
+        .left {
+            transform: rotateY(-90deg) translateZ(100px);
+        }
+
+        .top {
+            transform: rotateX(90deg) translateZ(100px);
+        }
+
+        .bottom {
+            transform: rotateX(-90deg) translateZ(100px);
+        }
+
+        a {
+            text-decoration: none;
+            color: #4CAF50;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotateX(-30deg) rotateY(0deg);
+            }
+
+            to {
+                transform: rotateX(-30deg) rotateY(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Cube Calculator</h1>
+        <input type="number" id="edgeLength" placeholder="Enter edge length (a)">
+        <button onclick="calculateCube()">Calculate</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <div class="cube-container">
+        <div class="cube">
+            <div class="front"></div>
+            <div class="back"></div>
+            <div class="right"></div>
+            <div class="left"></div>
+            <div class="top"></div>
+            <div class="bottom"></div>
+        </div>
+    </div>
+    <a href="../index.html">Back to Topics</a>
+
+    <script>
+        function calculateCube() {
+            const edgeLength = document.getElementById('edgeLength').value;
+            if (edgeLength > 0) {
+                const perimeter = 4 * edgeLength;
+                const area = edgeLength * edgeLength;
+                const surfaceArea = 6 * area;
+                const volume = edgeLength * edgeLength * edgeLength;
+
+                document.getElementById('result').innerHTML = `
+                    <p>Perimeter of one face: ${perimeter} units</p>
+                    <p>Area of one face: ${area} square units</p>
+                    <p>Total Surface Area: ${surfaceArea} square units</p>
+                    <p>Volume: ${volume} cubic units</p>
+                `;
+            } else {
+                document.getElementById('result').innerHTML = `
+                    <p>Please enter a positive edge length.</p>
+                `;
+            }
+        }
+    </script>
+</body>
+
+</html>

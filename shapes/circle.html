@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circle Properties and Formulas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        header {
+            background: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 5px 0;
+        }
+
+        .shape {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            position: relative;
+        }
+
+        .circle {
+            width: 100px;
+            height: 100px;
+            background-color: #333;
+            border-radius: 50%;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background: #333;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #4CAF50;
+            font-size: 18px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        button {
+            background: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            padding: 5px 8px;
+            border-radius: 4px;
+        }
+
+        button:hover {
+            background: #555;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>CIRCLE</h1>
+        </div>
+    </header>
+
+    <main class="container">
+        <section>
+            <h2>Definition</h2>
+            <p>A circle is a shape with all points the same distance from its center.</p>
+        </section>
+
+        <section>
+            <h2>General Form and Standard Equation</h2>
+            <ul>
+                <li><strong>General Form:</strong> Ax² + Ay² + Dx + Ey + F = 0</li>
+                <li><strong>Standard Equation:</strong> (x - h)² + (y - k)² = r²</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Nature of Circle</h2>
+            <p>All points are equidistant from the center.</p>
+        </section>
+
+        <section>
+            <h2>Condition for the General Second Degree Equation to Represent a Circle</h2>
+            <p>Coefficient of x² and y² must be equal, and there should be no xy term.</p>
+        </section>
+
+        <section>
+            <h2>Diametric Form of Circle</h2>
+            <p>Equation of a circle with diameter endpoints (x₁, y₁) and (x₂, y₂):</p>
+            <p>(x - x₁)(x - x₂) + (y - y₁)(y - y₂) = 0</p>
+        </section>
+
+        <section>
+            <h2>Equation of Circle Formed by Three Points</h2>
+            <p>Given points (x₁, y₁), (x₂, y₂), (x₃, y₃), solve determinants to find the equation.</p>
+        </section>
+
+        <section>
+            <h2>Equation of Circumscribing Circle of a Triangle Given Three Vertices</h2>
+            <p>Calculate the perpendicular bisectors of the sides, and find the intersection for the center.</p>
+        </section>
+
+        <section>
+            <h2>Intercept of the Circle on the Axes</h2>
+            <p>Find where the circle intersects the x-axis and y-axis.</p>
+        </section>
+
+        <section>
+            <h2>Position of a Point with Respect to Circle</h2>
+            <p>Point (x₁, y₁): If (x₁ - h)² + (y₁ - k)² < r², it's inside; if=r², on; if> r², outside.</p>
+        </section>
+
+        <section>
+            <h2>Power of a Point with Respect to the Circle</h2>
+            <p>For point (x₁, y₁), power = (x₁ - h)² + (y₁ - k)² - r².</p>
+        </section>
+
+        <section>
+            <h2>Least and Greatest Distance of a Point from a Circle</h2>
+            <p>Distance from point (x₁, y₁) to circle center (h, k): D = √((x₁ - h)² + (y₁ - k)²). Least distance = D -
+                r, greatest distance = D + r.</p>
+        </section>
+
+        <section>
+            <h2>Line and a Circle</h2>
+            <p>The intersection of a line and a circle can be zero, one, or two points.</p>
+        </section>
+
+        <section>
+            <h2>Tangent Equation of a Circle</h2>
+            <p>For circle (x - h)² + (y - k)² = r², tangent at point (x₁, y₁) is (x - h)(x₁ - h) + (y - k)(y₁ - k) = r².
+            </p>
+        </section>
+
+        <section>
+            <h2>Length of Tangents, Slope of Tangents</h2>
+            <p>Length from external point to tangent: √(D² - r²). Slope of tangent is perpendicular to the radius at the
+                point of tangency.</p>
+        </section>
+
+        <section>
+            <h2>Pair of Tangents</h2>
+            <p>The combined equation of pair of tangents from a point to the circle.</p>
+        </section>
+
+        <section>
+            <h2>Equation of Normal</h2>
+            <p>The normal to the circle at point (x₁, y₁) is perpendicular to the tangent at that point.</p>
+        </section>
+
+        <section>
+            <h2>Director Circle</h2>
+            <p>The locus of the point of intersection of two perpendicular tangents to the circle.</p>
+        </section>
+
+        <section>
+            <h2>Chord of Contacts</h2>
+            <p>The chord joining the points of contact of two tangents drawn from a point outside the circle.</p>
+        </section>
+
+        <section>
+            <h2>Chord Bisected at a Given Point</h2>
+            <p>The chord that is bisected at a given point within the circle.</p>
+        </section>
+
+        <section>
+            <h2>Common Chord, Tangent, Normal of Two Circles</h2>
+            <p>The line segment joining the points of intersection of two circles is called the common chord.</p>
+        </section>
+
+        <section>
+            <h2>Diameter of a Circle</h2>
+            <p>The longest chord of the circle, passing through its center.</p>
+        </section>
+
+        <section>
+            <h2>Angle of Intersection of Two Circles</h2>
+            <p>The angle between the tangents at the points of intersection of the two circles.</p>
+        </section>
+
+        <section>
+            <h2>Family of Circles</h2>
+            <p>Circles that share a common property, such as passing through the same two points.</p>
+        </section>
+        <section>
+            <h2>Calculate Circle Area from Radius</h2>
+            <input type="number" id="radius" placeholder="Radius">
+            <button onclick="calculateCircleAreaFromRadius()">Calculate Area</button>
+            <p id="result-area"></p>
+        </section>
+
+        <section>
+            <h2>Calculate Circle from Three Points</h2>
+            <input type="number" id="circle-x1" placeholder="x1">
+            <input type="number" id="circle-y1" placeholder="y1">
+            <input type="number" id="circle-x2" placeholder="x2">
+            <input type="number" id="circle-y2" placeholder="y2">
+            <input type="number" id="circle-x3" placeholder="x3">
+            <input type="number" id="circle-y3" placeholder="y3">
+            <button onclick="calculateCircleFromThreePoints()">Calculate Circle</button>
+            <p id="result-three-points"></p>
+        </section>
+
+        <section>
+            <h2>Calculate Intercept of Circle on the Axes</h2>
+            <input type="number" id="intercept-h" placeholder="h (center x)">
+            <input type="number" id="intercept-k" placeholder="k (center y)">
+            <input type="number" id="intercept-r" placeholder="Radius">
+            <button onclick="calculateIntercepts()">Calculate Intercepts</button>
+            <p id="result-intercepts"></p>
+        </section>
+
+        <section>
+            <h2>Calculate Position of Point with Respect to Circle</h2>
+            <input type="number" id="position-h" placeholder="h (center x)">
+            <input type="number" id="position-k" placeholder="k (center y)">
+            <input type="number" id="position-r" placeholder="Radius">
+            <input type="number" id="position-x" placeholder="Point x">
+            <input type="number" id="position-y" placeholder="Point y">
+            <button onclick="calculatePositionOfPoint()">Calculate Position</button>
+            <p id="result-position"></p>
+        </section>
+
+        <section>
+            <h2>Calculate Power of a Point with Respect to Circle</h2>
+            <input type="number" id="power-h" placeholder="h (center x)">
+            <input type="number" id="power-k" placeholder="k (center y)">
+            <input type="number" id="power-r" placeholder="Radius">
+            <input type="number" id="power-x" placeholder="Point x">
+            <input type="number" id="power-y" placeholder="Point y">
+            <button onclick="calculatePowerOfPoint()">Calculate Power</button>
+            <p id="result-power"></p>
+        </section>
+
+        <section>
+            <h2>Calculate Least and Greatest Distance of a Point from a Circle</h2>
+            <input type="number" id="distance-h" placeholder="h (center x)">
+            <input type="number" id="distance-k" placeholder="k (center y)">
+            <input type="number" id="distance-r" placeholder="Radius">
+            <input type="number" id="distance-x" placeholder="Point x">
+            <input type="number" id="distance-y" placeholder="Point y">
+            <button onclick="calculateDistances()">Calculate Distances</button>
+            <p id="result-distances"></p>
+        </section>
+
+        <section>
+            <h2>Calculate Tangent Equation</h2>
+            <input type="number" id="tangent-h" placeholder="h (center x)">
+            <input type="number" id="tangent-k" placeholder="k (center y)">
+            <input type="number" id="tangent-r" placeholder="Radius">
+            <input type="number" id="tangent-x1" placeholder="Point x1">
+            <input type="number" id="tangent-y1" placeholder="Point y1">
+            <button onclick="calculateTangentEquation()">Calculate Tangent Equation</button>
+            <p id="result-tangent-equation"></p>
+        </section>
+
+        <section>
+            <h2>Calculate Length of Tangents</h2>
+            <input type="number" id="length-h" placeholder="h (center x)">
+            <input type="number" id="length-k" placeholder="k (center y)">
+            <input type="number" id="length-r" placeholder="Radius">
+            <input type="number" id="length-x" placeholder="Point x">
+            <input type="number" id="length-y" placeholder="Point y">
+            <button onclick="calculateLengthOfTangents()">Calculate Length of Tangents</button>
+            <p id="result-length-tangents"></p>
+        </section>
+
+        <section>
+            <h2>Calculate Slope of Tangents</h2>
+            <input type="number" id="slope-h" placeholder="h (center x)">
+            <input type="number" id="slope-k" placeholder="k (center y)">
+            <input type="number" id="slope-r" placeholder="Radius">
+            <input type="number" id="slope-x" placeholder="Point x">
+            <input type="number" id="slope-y" placeholder="Point y">
+            <button onclick="calculateSlopeOfTangents()">Calculate Slope of Tangents</button>
+            <p id="result-slope-tangents"></p>
+        </section>
+
+        <section>
+            <h2>Calculate Pair of Tangents</h2>
+            <input type="number" id="pair-h" placeholder="h (center x)">
+            <input type="number" id="pair-k" placeholder="k (center y)">
+            <input type="number" id="pair-r" placeholder="Radius">
+            <input type="number" id="pair-x" placeholder="Point x">
+            <input type="number" id="pair-y" placeholder="Point y">
+            <button onclick="calculatePairOfTangents()">Calculate Pair of Tangents</button>
+            <p id="result-pair-tangents"></p>
+        </section>
+
+        <section>
+            <h2>Calculate Equation of Normal</h2>
+            <input type="number" id="normal-h" placeholder="h (center x)">
+            <input type="number" id="normal-k" placeholder="k (center y)">
+            <input type="number" id="normal-r" placeholder="Radius">
+            <input type="number" id="normal-x1" placeholder="Point x1">
+            <input type="number" id="normal-y1" placeholder="Point y1">
+            <button onclick="calculateEquationOfNormal()">Calculate Equation of Normal</button>
+            <p id="result-normal-equation"></p>
+        </section>
+
+        <section>
+            <h2>Calculate Director Circle</h2>
+            <input type="number" id="director-h" placeholder="h (center x)">
+            <input type="number" id="director-k" placeholder="k (center y)">
+            <input type="number" id="director-r" placeholder="Radius">
+            <button onclick="calculateDirectorCircle()">Calculate Director Circle</button>
+            <p id="result-director-circle"></p>
+        </section>
+
+        <section>
+            <h2>Calculate Chord of Contacts</h2>
+            <input type="number" id="chord-contact-h" placeholder="h (center x)">
+            <input type="number" id="chord-contact-k" placeholder="k (center y)">
+            <input type="number" id="chord-contact-r" placeholder="Radius">
+            <input type="number" id="chord-contact-x" placeholder="Point x">
+            <input type="number" id="chord-contact-y" placeholder="Point y">
+            <button onclick="calculateChordOfContacts()">Calculate Chord of Contacts</button>
+            <p id="result-chord-contacts"></p>
+        </section>
+
+        <section>
+            <h2>Calculate Chord Bisected at a Given Point</h2>
+            <input type="number" id="chord-bisect-h" placeholder="h (center x)">
+            <input type="number" id="chord-bisect-k" placeholder="k (center y)">
+            <input type="number" id="chord-bisect-r" placeholder="Radius">
+            <input type="number" id="chord-bisect-x" placeholder="Point x">
+            <input type="number" id="chord-bisect-y" placeholder="Point y">
+            <button onclick="calculateChordBisectedAtPoint()">Calculate Chord Bisected at Point</button>
+            <p id="result-chord-bisected"></p>
+        </section>
+
+        <section>
+            <h2>Calculate Common Chord, Tangent, Normal of Two Circles</h2>
+            <input type="number" id="common-chord-h1" placeholder="h1 (center x1)">
+            <input type="number" id="common-chord-k1" placeholder="k1 (center y1)">
+            <input type="number" id="common-chord-r1" placeholder="Radius 1">
+            <input type="number" id="common-chord-h2" placeholder="h2 (center x2)">
+            <input type="number" id="common-chord-k2" placeholder="k2 (center y2)">
+            <input type="number" id="common-chord-r2" placeholder="Radius 2">
+            <button onclick="calculateCommonChord()">Calculate Common Chord</button>
+            <p id="result-chord-common"></p>
+        </section>
+
+        <section>
+            <h2>Calculate Diameter of a Circle</h2>
+            <input type="number" id="diameter-r" placeholder="Radius">
+            <button onclick="calculateDiameter()">Calculate Diameter</button>
+            <p id="result-diameter"></p>
+        </section>
+
+        <section>
+            <h2>Calculate Angle of Intersection of Two Circles</h2>
+            <input type="number" id="angle-intersection-h1" placeholder="h1 (center x1)">
+            <input type="number" id="angle-intersection-k1" placeholder="k1 (center y1)">
+            <input type="number" id="angle-intersection-r1" placeholder="Radius 1">
+            <input type="number" id="angle-intersection-h2" placeholder="h2 (center x2)">
+            <input type="number" id="angle-intersection-k2" placeholder="k2 (center y2)">
+            <input type="number" id="angle-intersection-r2" placeholder="Radius 2">
+            <button onclick="calculateAngleOfIntersection()">Calculate Angle of Intersection</button>
+            <p id="result-angle-circle"></p>
+        </section>
+
+        <section>
+            <h2>Calculate Family of Circles</h2>
+            <input type="number" id="family-circle-h1" placeholder="h1 (center x1)">
+            <input type="number" id="family-circle-k1" placeholder="k1 (center y1)">
+            <input type="number" id="family-circle-r1" placeholder="Radius 1">
+            <input type="number" id="family-circle-h2" placeholder="h2 (center x2)">
+            <input type="number" id="family-circle-k2" placeholder="k2 (center y2)">
+            <input type="number" id="family-circle-r2" placeholder="Radius 2">
+            <button onclick="calculateFamilyOfCircles()">Calculate Family of Circles</button>
+            <p id="result-family-circle"></p>
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <a href="../index.html">Back to Topics</a>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Circle Properties. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Calculate Circle Area from Radius
+        function calculateCircleAreaFromRadius() {
+            const radius = parseFloat(document.getElementById('radius').value);
+
+            if (isNaN(radius)) {
+                document.getElementById('result-area').innerText = 'Please enter a valid radius.';
+                return;
+            }
+
+            const area = Math.PI * Math.pow(radius, 2);
+            document.getElementById('result-area').innerText = 'Area of the circle is ' + area.toFixed(2) + ' square units.';
+        }
+
+        // Calculate Circle from Three Points
+        function calculateCircleFromThreePoints() {
+            const x1 = parseFloat(document.getElementById('circle-x1').value);
+            const y1 = parseFloat(document.getElementById('circle-y1').value);
+            const x2 = parseFloat(document.getElementById('circle-x2').value);
+            const y2 = parseFloat(document.getElementById('circle-y2').value);
+            const x3 = parseFloat(document.getElementById('circle-x3').value);
+            const y3 = parseFloat(document.getElementById('circle-y3').value);
+
+            if (isNaN(x1) || isNaN(y1) || isNaN(x2) || isNaN(y2) || isNaN(x3) || isNaN(y3)) {
+                document.getElementById('result-three-points').innerText = 'Please enter valid coordinates.';
+                return;
+            }
+
+            const A = x1 * (y2 - y3) - y1 * (x2 - x3) + (x2 * y3 - x3 * y2);
+            const B = (x1 * x1 + y1 * y1) * (y3 - y2) + (x2 * x2 + y2 * y2) * (y1 - y3) + (x3 * x3 + y3 * y3) * (y2 - y1);
+            const C = (x1 * x1 + y1 * y1) * (x2 - x3) + (x2 * x2 + y2 * y2) * (x3 - x1) + (x3 * x3 + y3 * y3) * (x1 - x2);
+            const D = (x1 * x1 + y1 * y1) * (x3 * y2 - x2 * y3) + (x2 * x2 + y2 * y2) * (x1 * y3 - x3 * y1) + (x3 * x3 + y3 * y3) * (x2 * y1 - x1 * y2);
+
+            const h = -B / (2 * A);
+            const k = -C / (2 * A);
+            const r = Math.sqrt((B * B + C * C - 4 * A * D) / (4 * A * A));
+
+            document.getElementById('result-three-points').innerText = 'Center: (' + h.toFixed(2) + ', ' + k.toFixed(2) + '), Radius: ' + r.toFixed(2);
+        }
+
+        // Calculate Intercept of Circle on the Axes
+        function calculateIntercepts() {
+            const h = parseFloat(document.getElementById('intercept-h').value);
+            const k = parseFloat(document.getElementById('intercept-k').value);
+            const r = parseFloat(document.getElementById('intercept-r').value);
+
+            if (isNaN(h) || isNaN(k) || isNaN(r)) {
+                document.getElementById('result-intercepts').innerText = 'Please enter valid values.';
+                return;
+            }
+
+            const interceptX1 = h + r;
+            const interceptX2 = h - r;
+            const interceptY1 = k + r;
+            const interceptY2 = k - r;
+
+            document.getElementById('result-intercepts').innerText = 'X-axis Intercepts: (' + interceptX1.toFixed(2) + ', 0) and (' + interceptX2.toFixed(2) + ', 0), Y-axis Intercepts: (0, ' + interceptY1.toFixed(2) + ') and (0, ' + interceptY2.toFixed(2) + ')';
+        }
+
+        // Calculate Position of Point with Respect to Circle
+        function calculatePositionOfPoint() {
+            const h = parseFloat(document.getElementById('position-h').value);
+            const k = parseFloat(document.getElementById('position-k').value);
+            const r = parseFloat(document.getElementById('position-r').value);
+            const x = parseFloat(document.getElementById('position-x').value);
+            const y = parseFloat(document.getElementById('position-y').value);
+
+            if (isNaN(h) || isNaN(k) || isNaN(r) || isNaN(x) || isNaN(y)) {
+                document.getElementById('result-position').innerText = 'Please enter valid values.';
+                return;
+            }
+
+            const distance = Math.sqrt(Math.pow(x - h, 2) + Math.pow(y - k, 2));
+            if (distance < r) {
+                document.getElementById('result-position').innerText = 'The point (' + x + ', ' + y + ') is inside the circle.';
+            } else if (distance === r) {
+                document.getElementById('result-position').innerText = 'The point (' + x + ', ' + y + ') is on the circle.';
+            } else {
+                document.getElementById('result-position').innerText = 'The point (' + x + ', ' + y + ') is outside the circle.';
+            }
+        }
+
+        // Calculate Power of a Point with Respect to Circle
+        function calculatePowerOfPoint() {
+            const h = parseFloat(document.getElementById('power-h').value);
+            const k = parseFloat(document.getElementById('power-k').value);
+            const r = parseFloat(document.getElementById('power-r').value);
+            const x = parseFloat(document.getElementById('power-x').value);
+            const y = parseFloat(document.getElementById('power-y').value);
+
+            if (isNaN(h) || isNaN(k) || isNaN(r) || isNaN(x) || isNaN(y)) {
+                document.getElementById('result-power').innerText = 'Please enter valid values.';
+                return;
+            }
+
+            const power = Math.pow(x - h, 2) + Math.pow(y - k, 2) - Math.pow(r, 2);
+            document.getElementById('result-power').innerText = 'The power of the point (' + x + ', ' + y + ') with respect to the circle is ' + power.toFixed(2);
+        }
+
+        // Calculate Least and Greatest Distance of a Point from a Circle
+        function calculateDistances() {
+            const h = parseFloat(document.getElementById('distance-h').value);
+            const k = parseFloat(document.getElementById('distance-k').value);
+            const r = parseFloat(document.getElementById('distance-r').value);
+            const x = parseFloat(document.getElementById('distance-x').value);
+            const y = parseFloat(document.getElementById('distance-y').value);
+
+            if (isNaN(h) || isNaN(k) || isNaN(r) || isNaN(x) || isNaN(y)) {
+                document.getElementById('result-distances').innerText = 'Please enter valid values.';
+                return;
+            }
+
+            const distance = Math.sqrt(Math.pow(x - h, 2) + Math.pow(y - k, 2));
+            const leastDistance = Math.abs(distance - r);
+            const greatestDistance = distance + r;
+
+            document.getElementById('result-distances').innerText = 'The least distance of the point (' + x + ', ' + y + ') from the circle is ' + leastDistance.toFixed(2) + ' units. The greatest distance is ' + greatestDistance.toFixed(2) + ' units.';
+        }
+
+        // Calculate Tangent Equation
+        function calculateTangentEquation() {
+            const h = parseFloat(document.getElementById('tangent-h').value);
+            const k = parseFloat(document.getElementById('tangent-k').value);
+            const r = parseFloat(document.getElementById('tangent-r').value);
+            const x1 = parseFloat(document.getElementById('tangent-x1').value);
+            const y1 = parseFloat(document.getElementById('tangent-y1').value);
+
+            if (isNaN(h) || isNaN(k) || isNaN(r) || isNaN(x1) || isNaN(y1)) {
+                document.getElementById('result-tangent-equation').innerText = 'Please enter valid values.';
+                return;
+            }
+            const A = x1 - h;
+            const B = y1 - k;
+            const C = r * r + h * h - x1 * h + k * k - y1 * k;
+
+            const tangentEquation = A + "x + " + B + "y = " + C;
+            document.getElementById('result-tangent-equation').innerText = 'The equation of the tangent at point (' + x1 + ', ' + y1 + ') is: ' + tangentEquation;
+        }
+
+        // Calculate Length of Tangents
+        function calculateLengthOfTangents() {
+            const h = parseFloat(document.getElementById('length-h').value);
+            const k = parseFloat(document.getElementById('length-k').value);
+            const r = parseFloat(document.getElementById('length-r').value);
+            const x = parseFloat(document.getElementById('length-x').value);
+            const y = parseFloat(document.getElementById('length-y').value);
+            if (isNaN(h) || isNaN(k) || isNaN(r) || isNaN(x) || isNaN(y)) {
+                document.getElementById('result-length-tangents').innerText = 'Please enter valid values.';
+                return;
+            }
+
+            const distance = Math.sqrt(Math.pow(x - h, 2) + Math.pow(y - k, 2));
+            if (distance < r) {
+                document.getElementById('result-length-tangents').innerText = 'The point is inside the circle, so tangents cannot be drawn.';
+            } else {
+                const tangentLength = Math.sqrt(Math.pow(distance, 2) - Math.pow(r, 2));
+                document.getElementById('result-length-tangents').innerText = 'The length of the tangents from point (' + x + ', ' + y + ') to the circle is ' + tangentLength.toFixed(2) + ' units.';
+            }
+        }
+
+        // Calculate Slope of Tangents
+        function calculateSlopeOfTangents() {
+            const h = parseFloat(document.getElementById('slope-h').value);
+            const k = parseFloat(document.getElementById('slope-k').value);
+            const r = parseFloat(document.getElementById('slope-r').value);
+            const x = parseFloat(document.getElementById('slope-x').value);
+            const y = parseFloat(document.getElementById('slope-y').value);
+
+            if (isNaN(h) || isNaN(k) || isNaN(r) || isNaN(x) || isNaN(y)) {
+                document.getElementById('result-slope-tangents').innerText = 'Please enter valid values.';
+                return;
+            }
+
+            const distance = Math.sqrt(Math.pow(x - h, 2) + Math.pow(y - k, 2));
+            if (distance < r) {
+                document.getElementById('result-slope-tangents').innerText = 'The point is inside the circle, so tangents cannot be drawn.';
+            } else {
+                const dx = x - h;
+                const dy = y - k;
+                const sqrtTerm = Math.sqrt(dx * dx - r * r);
+
+                const slope1 = (dy + sqrtTerm) / dx;
+                const slope2 = (dy - sqrtTerm) / dx;
+
+                document.getElementById('result-slope-tangents').innerText = 'The slopes of the tangents from point (' + x + ', ' + y + ') to the circle are ' + slope1.toFixed(2) + ' and ' + slope2.toFixed(2) + '.';
+            }
+        }
+
+        // Calculate Pair of Tangents
+        function calculatePairOfTangents() {
+            const h = parseFloat(document.getElementById('pair-h').value);
+            const k = parseFloat(document.getElementById('pair-k').value);
+            const r = parseFloat(document.getElementById('pair-r').value);
+            const x = parseFloat(document.getElementById('pair-x').value);
+            const y = parseFloat(document.getElementById('pair-y').value);
+
+            if (isNaN(h) || isNaN(k) || isNaN(r) || isNaN(x) || isNaN(y)) {
+                document.getElementById('result-pair-tangents').innerText = 'Please enter valid values.';
+                return;
+            }
+
+            const distance = Math.sqrt(Math.pow(x - h, 2) + Math.pow(y - k, 2));
+            if (distance < r) {
+                document.getElementById('result-pair-tangents').innerText = 'The point is inside the circle, so tangents cannot be drawn.';
+            } else {
+                const dx = x - h;
+                const dy = y - k;
+                const sqrtTerm = Math.sqrt(dx * dx - r * r);
+                const m1 = (dy + sqrtTerm) / dx;
+                const m2 = (dy - sqrtTerm) / dx;
+
+                const c1 = y - m1 * x;
+                const c2 = y - m2 * x;
+
+                document.getElementById('result-pair-tangents').innerText = 'The equations of the tangents from point (' + x + ', ' + y + ') to the circle are y = ' + m1.toFixed(2) + 'x + ' + c1.toFixed(2) + ' and y = ' + m2.toFixed(2) + 'x + ' + c2.toFixed(2) + '.';
+            }
+        }
+
+        // Calculate Equation of Normal
+        function calculateEquationOfNormal() {
+            const h = parseFloat(document.getElementById('normal-h').value);
+            const k = parseFloat(document.getElementById('normal-k').value);
+            const r = parseFloat(document.getElementById('normal-r').value);
+            const x1 = parseFloat(document.getElementById('normal-x1').value);
+            const y1 = parseFloat(document.getElementById('normal-y1').value);
+
+            if (isNaN(h) || isNaN(k) || isNaN(r) || isNaN(x1) || isNaN(y1)) {
+                document.getElementById('result-normal-equation').innerText = 'Please enter valid values.';
+                return;
+            }
+
+            const slope = -(x1 - h) / (y1 - k);
+            const intercept = y1 - slope * x1;
+
+            document.getElementById('result-normal-equation').innerText = 'The equation of the normal to the circle at point (' + x1 + ', ' + y1 + ') is y = ' + slope.toFixed(2) + 'x + ' + intercept.toFixed(2) + '.';
+        }
+
+        // Calculate Director Circle
+        function calculateDirectorCircle() {
+            const h = parseFloat(document.getElementById('director-h').value);
+            const k = parseFloat(document.getElementById('director-k').value);
+            const r = parseFloat(document.getElementById('director-r').value);
+
+            if (isNaN(h) || isNaN(k) || isNaN(r)) {
+                document.getElementById('result-director-circle').innerText = 'Please enter valid values.';
+                return;
+            }
+
+            const directorRadius = Math.sqrt(2) * r;
+            document.getElementById('result-director-circle').innerText = 'The equation of the director circle is (x - ' + h + ')² + (y - ' + k + ')² = ' + directorRadius.toFixed(2) + '².';
+        }
+
+        // Calculate Chord of Contacts
+        function calculateChordOfContacts() {
+            const h = parseFloat(document.getElementById('chord-contact-h').value);
+            const k = parseFloat(document.getElementById('chord-contact-k').value);
+            const r = parseFloat(document.getElementById('chord-contact-r').value);
+            const x = parseFloat(document.getElementById('chord-contact-x').value);
+            const y = parseFloat(document.getElementById('chord-contact-y').value);
+
+            if (isNaN(h) || isNaN(k) || isNaN(r) || isNaN(x) || isNaN(y)) {
+                document.getElementById('result-chord-contacts').innerText = 'Please enter valid values.';
+                return;
+            }
+
+            const chord = `Chord of contact: ${x}x + ${y}y = ${r * r}`;
+            document.getElementById('result-chord-contacts').innerText = chord;
+        }
+
+        // Calculate Chord Bisected at a Given Point
+        function calculateChordBisectedAtPoint() {
+            const h = parseFloat(document.getElementById('chord-bisect-h').value);
+            const k = parseFloat(document.getElementById('chord-bisect-k').value);
+            const r = parseFloat(document.getElementById('chord-bisect-r').value);
+            const x = parseFloat(document.getElementById('chord-bisect-x').value);
+            const y = parseFloat(document.getElementById('chord-bisect-y').value);
+
+            if (isNaN(h) || isNaN(k) || isNaN(r) || isNaN(x) || isNaN(y)) {
+                document.getElementById('result-chord-bisected').innerText = 'Please enter valid values.';
+                return;
+            }
+
+            const bisectedChord = `Chord bisected at (${x}, ${y}): (x - ${h})(x - ${x}) + (y - ${k})(y - ${y}) = ${r * r}`;
+            document.getElementById('result-chord-bisected').innerText = bisectedChord;
+        }
+
+        // Calculate Common Chord, Tangent, Normal of Two Circles
+        function calculateCommonChord() {
+            const h1 = parseFloat(document.getElementById('common-chord-h1').value);
+            const k1 = parseFloat(document.getElementById('common-chord-k1').value);
+            const r1 = parseFloat(document.getElementById('common-chord-r1').value);
+            const h2 = parseFloat(document.getElementById('common-chord-h2').value);
+            const k2 = parseFloat(document.getElementById('common-chord-k2').value);
+            const r2 = parseFloat(document.getElementById('common-chord-r2').value);
+
+            if (isNaN(h1) || isNaN(k1) || isNaN(r1) || isNaN(h2) || isNaN(k2) || isNaN(r2)) {
+                document.getElementById('result-chord-common').innerText = 'Please enter valid values.';
+                return;
+            }
+
+            const commonChord = `Common chord: ${(h1 - h2)}x + ${(k1 - k2)}y = ${(r1 * r1 - r2 * r2)}`;
+            document.getElementById('result-chord-common').innerText = commonChord;
+        }
+
+        // Calculate Diameter of a Circle
+        function calculateDiameter() {
+            const r = parseFloat(document.getElementById('diameter-r').value);
+
+            if (isNaN(r)) {
+                document.getElementById('result-diameter').innerText = 'Please enter a valid radius.';
+                return;
+            }
+
+            const diameter = 2 * r;
+            document.getElementById('result-diameter').innerText = 'The diameter of the circle is ' + diameter.toFixed(2) + ' units.';
+        }
+
+        // Calculate Angle of Intersection of Two Circles
+        function calculateAngleOfIntersection() {
+            const h1 = parseFloat(document.getElementById('angle-intersection-h1').value);
+            const k1 = parseFloat(document.getElementById('angle-intersection-k1').value);
+            const r1 = parseFloat(document.getElementById('angle-intersection-r1').value);
+            const h2 = parseFloat(document.getElementById('angle-intersection-h2').value);
+            const k2 = parseFloat(document.getElementById('angle-intersection-k2').value);
+            const r2 = parseFloat(document.getElementById('angle-intersection-r2').value);
+
+            if (isNaN(h1) || isNaN(k1) || isNaN(r1) || isNaN(h2) || isNaN(k2) || isNaN(r2)) {
+                document.getElementById('result-angle-circle').innerText = 'Please enter valid values.';
+                return;
+            }
+
+            const distance = Math.sqrt(Math.pow(h2 - h1, 2) + Math.pow(k2 - k1, 2));
+            if (distance > r1 + r2 || distance < Math.abs(r1 - r2)) {
+                document.getElementById('result-angle-circle').innerText = 'The circles do not intersect.';
+                return;
+            }
+
+            const angle = Math.acos((Math.pow(r1, 2) + Math.pow(r2, 2) - Math.pow(distance, 2)) / (2 * r1 * r2));
+            document.getElementById('result-angle-circle').innerText = 'The angle of intersection between the two circles is ' + (angle * 180 / Math.PI).toFixed(2) + ' degrees.';
+        }
+
+        // Calculate Family of Circles
+        function calculateFamilyOfCircles() {
+            const h1 = parseFloat(document.getElementById('family-circle-h1').value);
+            const k1 = parseFloat(document.getElementById('family-circle-k1').value);
+            const r1 = parseFloat(document.getElementById('family-circle-r1').value);
+            const h2 = parseFloat(document.getElementById('family-circle-h2').value);
+            const k2 = parseFloat(document.getElementById('family-circle-k2').value);
+            const r2 = parseFloat(document.getElementById('family-circle-r2').value);
+
+            if (isNaN(h1) || isNaN(k1) || isNaN(r1) || isNaN(h2) || isNaN(k2) || isNaN(r2)) {
+                document.getElementById('result-family-circle').innerText = 'Please enter valid values.';
+                return;
+            }
+
+            const family = `Family of circles: ${h1}x + ${k1}y + ${r1} + k(${h2}x + ${k2}y + ${r2}) = 0`;
+            document.getElementById('result-family-circle').innerText = family;
+        }
+
+    </script>
+</body>
+
+</html>

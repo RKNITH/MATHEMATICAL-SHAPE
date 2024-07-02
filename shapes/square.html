@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Square Properties and Formulas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        header {
+            background: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 5px 0;
+        }
+
+        .shape {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            position: relative;
+        }
+
+        .square {
+            width: 100px;
+            height: 100px;
+            background-color: #333;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background: #333;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #4CAF50;
+            font-size: 18px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        button {
+            background: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            padding: 5px 8px;
+            border-radius: 4px;
+        }
+
+        button:hover {
+            background: #555;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>SQUARE</h1>
+        </div>
+    </header>
+
+    <main class="container">
+        <section>
+            <h2>Definition</h2>
+            <p>A square is a regular quadrilateral where all four sides are equal in length and all angles are right
+                angles (90°).</p>
+        </section>
+
+        <section>
+            <h2>Properties</h2>
+            <ul>
+                <li>All sides are equal.</li>
+                <li>All angles are right angles (90°).</li>
+                <li>Diagonals are equal in length and bisect each other at right angles.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Formulas</h2>
+            <ul>
+                <li><strong>Area:</strong> A = a²</li>
+                <li><strong>Perimeter:</strong> P = 4a</li>
+                <li><strong>Diagonal:</strong> d = a√2</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Diagonal Calculation</h2>
+            <p>To calculate the diagonal (d) of a square with side length a:</p>
+            <p>d = a√2</p>
+        </section>
+        <section>
+            <h2>Calculate Area of Square from Vertices</h2>
+            <p>Enter the coordinates of the vertices:</p>
+            <label for="x1">Vertex 1 (x1, y1):</label>
+            <input type="text" id="x1" name="x1"> , <input type="text" id="y1" name="y1"><br><br>
+
+            <label for="x2">Vertex 2 (x2, y2):</label>
+            <input type="text" id="x2" name="x2"> , <input type="text" id="y2" name="y2"><br><br>
+
+            <label for="x3">Vertex 3 (x3, y3):</label>
+            <input type="text" id="x3" name="x3"> , <input type="text" id="y3" name="y3"><br><br>
+
+            <label for="x4">Vertex 4 (x4, y4):</label>
+            <input type="text" id="x4" name="x4"> , <input type="text" id="y4" name="y4"><br><br>
+
+            <button onclick="calculateArea()">Calculate Area</button>
+            <p id="result"></p>
+        </section>
+
+        <section>
+            <h2>Calculate Fourth Vertex</h2>
+            <p>Enter the coordinates of three vertices to find the fourth:</p>
+            <label for="v1x">Vertex 1 (x1, y1):</label>
+            <input type="text" id="v1x" name="v1x"> , <input type="text" id="v1y" name="v1y"><br><br>
+
+            <label for="v2x">Vertex 2 (x2, y2):</label>
+            <input type="text" id="v2x" name="v2x"> , <input type="text" id="v2y" name="v2y"><br><br>
+
+            <label for="v3x">Vertex 3 (x3, y3):</label>
+            <input type="text" id="v3x" name="v3x"> , <input type="text" id="v3y" name="v3y"><br><br>
+
+            <button onclick="calculateFourthVertex()">Calculate Fourth Vertex</button>
+            <p id="fourthVertexResult"></p>
+        </section>
+        <a href="../index.html">Back to Topics</a>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Square Properties. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function calculateArea() {
+            const x1 = parseFloat(document.getElementById('x1').value);
+            const y1 = parseFloat(document.getElementById('y1').value);
+            const x2 = parseFloat(document.getElementById('x2').value);
+            const y2 = parseFloat(document.getElementById('y2').value);
+            const x3 = parseFloat(document.getElementById('x3').value);
+            const y3 = parseFloat(document.getElementById('y3').value);
+            const x4 = parseFloat(document.getElementById('x4').value);
+            const y4 = parseFloat(document.getElementById('y4').value);
+
+            // Check if inputs are valid numbers
+            if (isNaN(x1) || isNaN(y1) || isNaN(x2) || isNaN(y2) || isNaN(x3) || isNaN(y3) || isNaN(x4) || isNaN(y4)) {
+                document.getElementById('result').innerText = 'Please enter valid coordinates (numbers).';
+                return;
+            }
+
+            // Calculate side lengths using distance formula
+            const side1 = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+            const side2 = Math.sqrt(Math.pow(x3 - x2, 2) + Math.pow(y3 - y2, 2));
+            const side3 = Math.sqrt(Math.pow(x4 - x3, 2) + Math.pow(y4 - y3, 2));
+            const side4 = Math.sqrt(Math.pow(x1 - x4, 2) + Math.pow(y1 - y4, 2));
+
+            // Check if all sides are equal (to verify it's a square)
+            if (!(side1 === side2 && side2 === side3 && side3 === side4)) {
+                document.getElementById('result').innerText = 'The given coordinates do not form a square.';
+                return;
+            }
+
+            // Calculate area (side squared)
+            const area = Math.pow(side1, 2);
+
+            // Display result
+            document.getElementById('result').innerText = 'Area of the square is ' + area.toFixed(2) + ' square units.';
+        }
+
+        function calculateFourthVertex() {
+            const x1 = parseFloat(document.getElementById('v1x').value);
+            const y1 = parseFloat(document.getElementById('v1y').value);
+            const x2 = parseFloat(document.getElementById('v2x').value);
+            const y2 = parseFloat(document.getElementById('v2y').value);
+            const x3 = parseFloat(document.getElementById('v3x').value);
+            const y3 = parseFloat(document.getElementById('v3y').value);
+
+            // Check if inputs are valid numbers
+            if (isNaN(x1) || isNaN(y1) || isNaN(x2) || isNaN(y2) || isNaN(x3) || isNaN(y3)) {
+                document.getElementById('fourthVertexResult').innerText = 'Please enter valid coordinates (numbers).';
+                return;
+            }
+
+            // Find the fourth vertex
+            const x4 = x1 + x3 - x2;
+            const y4 = y1 + y3 - y2;
+
+            // Display result
+            document.getElementById('fourthVertexResult').innerText = 'The coordinates of the fourth vertex are (' + x4.toFixed(2) + ', ' + y4.toFixed(2) + ').';
+        }
+    </script>
+
+</body>
+
+</html>
